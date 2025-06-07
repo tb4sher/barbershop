@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop BS - Ultra Premium Herrenfriseur</title>
+    <meta name="description" content="Erleben Sie luxuriöse Herrenpflege auf höchstem Niveau. Premium Haarschnitte, exklusive Bartpflege und erstklassiger Service in eleganter Atmosphäre.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium-styles-fixed.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💈</text></svg>">
+</head>
+<body>
+    <!-- Premium Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-cut"></i>
+                <span>Barbershop BS</span>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Preparing your premium experience...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-premium" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-premium">
+                <i class="fas fa-cut"></i>
+                Barbershop BS
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Über Uns</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="#booking" class="btn-premium">Termin Buchen</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+    </nav>    <!-- Hero Section -->
+    <section id="home" class="hero-ultra">
+        <!-- Ultra Multi-Layer Parallax Background System -->
+        <div class="parallax-container">
+            <div class="parallax-layer parallax-bg-far" data-speed="0.1">
+                <div class="pattern-overlay pattern-1"></div>
+            </div>
+            <div class="parallax-layer parallax-bg-mid" data-speed="0.3">
+                <div class="pattern-overlay pattern-2"></div>
+            </div>
+            <div class="parallax-layer parallax-bg-near" data-speed="0.6">
+                <div class="pattern-overlay pattern-3"></div>
+            </div>
+            <div class="parallax-layer parallax-bg-ultra" data-speed="0.8">
+                <div class="luxury-particles-bg"></div>
+            </div>
+        </div>
+        
+        <div class="hero-background-ultra parallax" data-speed="0.5">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Luxury Barbershop" class="hero-image parallax" data-speed="0.3">
+            <div class="hero-overlay parallax" data-speed="0.7"></div>
+        </div>
+        
+        <!-- Ultra Enhanced Parallax Elements -->
+        <div class="parallax-element parallax-scissors" data-speed="0.2">
+            <i class="fas fa-cut"></i>
+        </div>
+        <div class="parallax-element parallax-comb" data-speed="0.4">
+            <i class="fas fa-grip-lines-vertical"></i>
+        </div>
+        <div class="parallax-element parallax-razor" data-speed="0.6">
+            <i class="fas fa-shower"></i>
+        </div>
+        <div class="parallax-element parallax-crown" data-speed="0.8">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="parallax-element parallax-star-1" data-speed="0.25">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="parallax-element parallax-star-2" data-speed="0.35">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="parallax-element parallax-star-3" data-speed="0.45">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="parallax-element parallax-diamond" data-speed="0.55">
+            <i class="fas fa-gem"></i>
+        </div>
+        <div class="parallax-element parallax-mustache" data-speed="0.65">
+            <i class="fas fa-smoking"></i>
+        </div>
+        <div class="parallax-element parallax-bowtie" data-speed="0.75">
+            <i class="fas fa-user-tie"></i>
+        </div>
+        
+        <!-- Advanced Floating Elements with Parallax -->
+        <div class="floating-element floating-scissors parallax" data-speed="0.1">
+            <i class="fas fa-cut"></i>
+        </div>
+        <div class="floating-element floating-comb parallax" data-speed="0.15">
+            <i class="fas fa-grip-lines-vertical"></i>
+        </div>
+        <div class="floating-element floating-razor parallax" data-speed="0.2">
+            <i class="fas fa-shower"></i>
+        </div>
+        <div class="floating-element floating-brush parallax" data-speed="0.25">
+            <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="floating-element floating-mirror parallax" data-speed="0.3">
+            <i class="fas fa-mirror"></i>
+        </div>
+        
+        <!-- Geometric Parallax Shapes -->
+        <div class="geometric-shape shape-1 parallax" data-speed="0.12"></div>
+        <div class="geometric-shape shape-2 parallax" data-speed="0.18"></div>
+        <div class="geometric-shape shape-3 parallax" data-speed="0.24"></div>
+        <div class="geometric-shape shape-4 parallax" data-speed="0.36"></div>
+        <div class="geometric-shape shape-5 parallax" data-speed="0.42"></div>
+        
+        <div class="hero-content-ultra">
+            <h1 class="hero-title-ultra text-parallax" data-speed="0.1">
+                <span class="title-main" data-typewriter="Barbershop BS" data-speed="150">Barbershop BS</span>
+                <span class="title-subtitle text-parallax" data-speed="0.05">Premium Herrenpflege</span>
+            </h1>
+            
+            <p class="hero-description-ultra scroll-reveal text-parallax" data-speed="0.08">
+                Erleben Sie luxuriöse Herrenpflege auf höchstem Niveau. Traditionelles Handwerk trifft auf moderne Eleganz 
+                für das ultimative Grooming-Erlebnis.
+            </p>
+            
+            <div class="hero-buttons-ultra scroll-reveal">
+                <a href="#booking" class="btn-ultra-luxury">
+                    <i class="fas fa-calendar-alt"></i>
+                    Termin Buchen
+                </a>
+                <a href="#services" class="btn-glass">
+                    <i class="fas fa-star"></i>
+                    Unsere Services
+                </a>
+            </div>
+            
+            <div class="hero-stats-ultra scroll-reveal">
+                <div class="stat-ultra">
+                    <span class="stat-number-ultra" data-count="15">15</span>
+                    <span class="stat-label-ultra">Jahre Erfahrung</span>
+                </div>
+                <div class="stat-ultra">
+                    <span class="stat-number-ultra" data-count="5000">5000</span>
+                    <span class="stat-label-ultra">Zufriedene Kunden</span>
+                </div>
+                <div class="stat-ultra">
+                    <span class="stat-number-ultra" data-count="98">98</span>
+                    <span class="stat-label-ultra">% Weiterempfehlung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Parallax -->
+    <section id="about" class="section-padding parallax-section">
+        <!-- Section Background Parallax -->
+        <div class="section-bg-parallax" data-speed="0.2">
+            <div class="pattern-movement luxury-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title text-parallax" data-speed="0.1">Über Barbershop BS</h2>
+                <p class="section-subtitle text-parallax" data-speed="0.05">Tradition trifft Innovation - Ihr Spezialist für erstklassige Herrenpflege</p>
+            </div>
+            
+            <!-- Parallax Decorative Elements -->
+            <div class="parallax-element about-decoration-1" data-speed="0.15">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="parallax-element about-decoration-2" data-speed="0.25">
+                <i class="fas fa-medal"></i>
+            </div>
+            <div class="parallax-element about-decoration-3" data-speed="0.35">
+                <i class="fas fa-crown"></i>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text scroll-reveal-left">
+                    <h3 class="text-parallax" data-speed="0.08">Unser Versprechen</h3>
+                    <p class="text-parallax" data-speed="0.06">Seit über 15 Jahren stehen wir für höchste Qualität in der Herrenpflege. Unser Team aus erfahrenen Stylisten verbindet traditionelle Barbier-Kunst mit modernen Techniken.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item glass-card parallax-card" data-speed="0.05">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Premium Qualität</h4>
+                                <p>Nur die besten Produkte und Techniken für perfekte Ergebnisse</p>
+                            </div>
+                        </div>
+                        <div class="feature-item glass-card parallax-card" data-speed="0.1">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Termingarantie</h4>
+                                <p>Pünktliche Termine ohne Wartezeiten - Ihre Zeit ist uns wichtig</p>
+                            </div>
+                        </div>
+                        <div class="feature-item glass-card parallax-card" data-speed="0.15">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Erfahrene Experten</h4>
+                                <p>Meisterhafte Stylisten mit jahrelanger Erfahrung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image scroll-reveal-right">
+                    <div class="glass-card card-3d">
+                        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Barbershop Interior" class="parallax" data-speed="0.2">
+                        <div class="floating-card">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Premium Award</strong>
+                                <span>Best Barbershop 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title text-light">Unsere Premium Services</h2>
+                <p class="section-subtitle text-light">Exklusive Dienstleistungen für den anspruchsvollen Gentleman</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="glass-card card-3d scroll-reveal" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Premium Haarschnitt</h3>
+                    <p>Individueller Haarschnitt nach Ihren Wünschen mit kostenloser Stilberatung und Styling</p>
+                    <div class="service-price">€45</div>
+                    <ul class="service-features">
+                        <li>Persönliche Beratung</li>
+                        <li>Professionelles Styling</li>
+                        <li>Premium Produkte</li>
+                        <li>Kopfmassage inklusive</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card card-3d scroll-reveal featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-badge">BELIEBT</div>
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Komplettpaket Deluxe</h3>
+                    <p>Das ultimative Grooming-Erlebnis: Haarschnitt, Bartpflege, Gesichtsbehandlung und mehr</p>
+                    <div class="service-price">€85</div>
+                    <ul class="service-features">
+                        <li>Premium Haarschnitt</li>
+                        <li>Bart-Styling & Pflege</li>
+                        <li>Hot Towel Treatment</li>
+                        <li>Gesichtsmaske</li>
+                        <li>Augenbrauen-Styling</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card card-3d scroll-reveal" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Bartpflege Premium</h3>
+                    <p>Professionelle Bartpflege mit traditioneller Rasur und hochwertigen Pflegeprodukten</p>
+                    <div class="service-price">€35</div>
+                    <ul class="service-features">
+                        <li>Bart-Trimming</li>
+                        <li>Konturierung</li>
+                        <li>Hot Towel Rasur</li>
+                        <li>Aftershave Treatment</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card card-3d scroll-reveal" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Styling & Beratung</h3>
+                    <p>Professionelle Stilberatung für Ihren perfekten Look mit Produktempfehlungen</p>
+                    <div class="service-price">€25</div>
+                    <ul class="service-features">
+                        <li>Stil-Analyse</li>
+                        <li>Produktberatung</li>
+                        <li>Styling-Tipps</li>
+                        <li>Pflege-Guide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Ultra Parallax -->
+    <section id="gallery" class="section-padding parallax-section">
+        <!-- Gallery Background Parallax Layers -->
+        <div class="gallery-bg-parallax">
+            <div class="gallery-pattern-1 parallax" data-speed="0.1"></div>
+            <div class="gallery-pattern-2 parallax" data-speed="0.2"></div>
+            <div class="gallery-pattern-3 parallax" data-speed="0.3"></div>
+        </div>
+        
+        <!-- Floating Gallery Decorations -->
+        <div class="parallax-element gallery-decoration-1" data-speed="0.15">
+            <i class="fas fa-camera"></i>
+        </div>
+        <div class="parallax-element gallery-decoration-2" data-speed="0.25">
+            <i class="fas fa-palette"></i>
+        </div>
+        <div class="parallax-element gallery-decoration-3" data-speed="0.35">
+            <i class="fas fa-eye"></i>
+        </div>
+        <div class="parallax-element gallery-decoration-4" data-speed="0.45">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title text-parallax" data-speed="0.1">Unsere Arbeiten</h2>
+                <p class="section-subtitle text-parallax" data-speed="0.05">Eindrücke aus unserem Premium Barbershop</p>
+            </div>
+            
+            <div class="gallery-filter parallax" data-speed="0.08" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="haircuts">Haarschnitte</button>
+                <button class="filter-btn" data-filter="beards">Bärte</button>
+                <button class="filter-btn" data-filter="interior">Interior</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="haircuts" data-aos="zoom-in" data-speed="0.12">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Haircut">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.18">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="beards" data-aos="zoom-in" data-aos-delay="100" data-speed="0.15">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beard Styling">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.22">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="interior" data-aos="zoom-in" data-aos-delay="200" data-speed="0.18">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbershop Interior">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.26">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="haircuts" data-aos="zoom-in" data-aos-delay="300" data-speed="0.21">
+                    <img src="https://images.unsplash.com/photo-1622286346003-c5c8b15e9fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Haircut">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.28">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="beards" data-aos="zoom-in" data-aos-delay="400" data-speed="0.24">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beard Treatment">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.34">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item card-3d parallax-gallery-item" data-category="interior" data-aos="zoom-in" data-aos-delay="500" data-speed="0.27">
+                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbershop Chair">
+                    <div class="gallery-overlay parallax-overlay" data-speed="0.38">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="overlay-effects">
+                            <div class="shimmer-line"></div>
+                            <div class="glow-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Parallax Effects -->
+    <section id="contact" class="section-padding parallax-section">
+        <!-- Contact Background Parallax -->
+        <div class="contact-bg-parallax">
+            <div class="contact-pattern-1 parallax" data-speed="0.1"></div>
+            <div class="contact-pattern-2 parallax" data-speed="0.15"></div>
+            <div class="floating-contact-elements">
+                <div class="parallax-element contact-phone" data-speed="0.2">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="parallax-element contact-mail" data-speed="0.25">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="parallax-element contact-location" data-speed="0.3">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="parallax-element contact-time" data-speed="0.35">
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title text-parallax" data-speed="0.1">Kontakt & Terminbuchung</h2>
+                <p class="section-subtitle text-parallax" data-speed="0.05">Vereinbaren Sie Ihren Termin für das ultimative Grooming-Erlebnis</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info scroll-reveal-left">
+                    <div class="contact-item glass-card parallax-card" data-speed="0.08">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Standort</h4>
+                            <p>Musterstraße 123<br>12345 Musterstadt</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item glass-card parallax-card" data-speed="0.12">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>+49 123 456 789</p>
+                            <a href="tel:+49123456789" class="btn-ultra-luxury">Jetzt anrufen</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item glass-card parallax-card" data-speed="0.16">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-Mail</h4>
+                            <p>info@barbershop-bs.de</p>
+                            <a href="mailto:info@barbershop-bs.de" class="btn-ultra-luxury">E-Mail senden</a>
+                        </div>
+                    </div>
+                    
+                    <div class="opening-hours glass-card parallax-card" data-speed="0.2">
+                        <h4><i class="fas fa-clock"></i> Öffnungszeiten</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span>Montag - Freitag</span>
+                                <span>09:00 - 19:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Samstag</span>
+                                <span>08:00 - 17:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sonntag</span>
+                                <span>10:00 - 16:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container scroll-reveal-right">
+                    <form class="contact-form glass-card parallax-form" data-speed="0.1" id="contact-form">
+                        <h3 class="text-parallax" data-speed="0.05">Nachricht senden</h3>
+                        
+                        <div class="form-group parallax-form-group" data-speed="0.08">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Ihr Name</label>
+                        </div>
+                        
+                        <div class="form-group parallax-form-group" data-speed="0.12">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">E-Mail Adresse</label>
+                        </div>
+                        
+                        <div class="form-group parallax-form-group" data-speed="0.16">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Telefonnummer</label>
+                        </div>
+                        
+                        <div class="form-group parallax-form-group" data-speed="0.2">
+                            <select id="service" name="service" required>
+                                <option value="">Service wählen</option>
+                                <option value="haircut">Premium Haarschnitt</option>
+                                <option value="deluxe">Komplettpaket Deluxe</option>
+                                <option value="beard">Bartpflege Premium</option>
+                                <option value="styling">Styling & Beratung</option>
+                            </select>
+                            <label for="service">Gewünschter Service</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Ihre Nachricht</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-ultra-luxury">
+                            <i class="fas fa-paper-plane"></i>
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="booking-content" data-aos="fade-up">
+                <h2>Termin online buchen</h2>
+                <p>Sichern Sie sich Ihren Wunschtermin bequem online - 24/7 verfügbar</p>
+                
+                <div class="booking-widget glass-card">
+                    <div class="booking-placeholder">
+                        <i class="fas fa-calendar-plus"></i>
+                        <h3>Online Buchungssystem</h3>
+                        <p>Hier wird Ihr bevorzugtes Buchungssystem integriert</p>
+                        <a href="tel:+4912345678" class="btn-ultra-luxury">
+                            <i class="fas fa-phone"></i>
+                            Jetzt anrufen: +49 (0) 123 456 789
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cut"></i>
+                        Barbershop BS
+                    </div>
+                    <p>Ihr Premium Barbershop für erstklassige Herrenpflege. Tradition trifft auf moderne Eleganz.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Premium Haarschnitt</a></li>
+                        <li><a href="#services">Komplettpaket Deluxe</a></li>
+                        <li><a href="#services">Bartpflege Premium</a></li>
+                        <li><a href="#services">Styling & Beratung</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Musterstraße 123, 12345 Musterstadt</li>
+                        <li><i class="fas fa-phone"></i> +49 (0) 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@barbershop-bs.de</li>
+                        <li><i class="fas fa-clock"></i> Mo-Fr: 09:00-19:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Bleiben Sie über Angebote und News informiert</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Ihre E-Mail Adresse" required>                        <button type="submit" class="btn-premium">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barbershop BS. Alle Rechte vorbehalten.</p>
+                <div class="footer-links">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/premium-effects-clean.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

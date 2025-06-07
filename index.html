@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop BS - Premium Herrenfriseur</title>
+    <meta name="description" content="Moderner Herrenfriseur mit traditionellem Handwerk. Haarschnitte, Bartpflege und Styling in entspannter Atmosphäre.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="scissors">
+                <i class="fas fa-cut"></i>
+            </div>
+            <div class="loading-text">Barbershop BS</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cut"></i>
+                <span>Barbershop BS</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Über Uns</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Galerie</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#booking" class="nav-link btn-primary">Termin Buchen</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>            <!-- Video placeholder - replace with actual video or use background image -->
+            <div class="hero-image" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="500">
+                <h1 class="hero-title">
+                    <span class="title-line">Traditionelles</span>
+                    <span class="title-line">Handwerk</span>
+                    <span class="title-highlight">Moderne Eleganz</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Erleben Sie die perfekte Symbiose aus klassischer Barbier-Kunst 
+                    und zeitgemäßem Styling in unserem exklusiven Herrensalon.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Termin Buchen
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Services Entdecken
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Zufriedene Kunden</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-label">Jahre Erfahrung</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Premium Services</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">Scroll Down</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Über Barbershop BS</h2>
+                <p class="section-subtitle">Tradition trifft Innovation</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Meisterhafte Handwerkskunst seit 2019</h3>
+                    <p>
+                        In unserem modernen Barbershop verbinden wir traditionelle Techniken 
+                        mit zeitgemäßen Trends. Jeder Haarschnitt wird individuell auf Sie 
+                        abgestimmt und mit höchster Präzision ausgeführt.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Meisterqualität</h4>
+                                <p>Ausgebildete Friseurmeister mit jahrelanger Erfahrung</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Premium Produkte</h4>
+                                <p>Nur hochwertige, natürliche Pflegeprodukte</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Flexible Termine</h4>
+                                <p>Auch abends und am Wochenende für Sie da</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbershop Interior">
+                    <div class="floating-card">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <strong>4.9/5</strong>
+                                <span>Google Bewertungen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Unsere Services</h2>
+                <p class="section-subtitle">Professionelle Pflege für den modernen Mann</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Klassischer Haarschnitt</h3>
+                    <p>Präzise Schnitte nach Ihren Wünschen mit traditionellen und modernen Techniken.</p>
+                    <div class="service-price">ab 35€</div>
+                    <ul class="service-features">
+                        <li>Beratung & Analyse</li>
+                        <li>Waschen & Schneiden</li>
+                        <li>Styling & Finish</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-badge">Beliebt</div>
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Premium Styling</h3>
+                    <p>Komplettes Makeover mit Haarschnitt, Bartpflege und professionellem Styling.</p>
+                    <div class="service-price">ab 65€</div>
+                    <ul class="service-features">
+                        <li>Komplettberatung</li>
+                        <li>Haarschnitt & Bart</li>
+                        <li>Gesichtspflege</li>
+                        <li>Premium Produkte</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Traditionelle Rasur</h3>
+                    <p>Entspannende Heißschaumrasur mit handgeschärften Messern und Aftershave.</p>
+                    <div class="service-price">ab 25€</div>
+                    <ul class="service-features">
+                        <li>Heißer Handtuch</li>
+                        <li>Rasiermesser</li>
+                        <li>Gesichtsmassage</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Bartpflege</h3>
+                    <p>Professionelle Bartformung, Trimmen und Pflege für den perfekten Look.</p>
+                    <div class="service-price">ab 20€</div>
+                    <ul class="service-features">
+                        <li>Bart trimmen</li>
+                        <li>Konturenschnitt</li>
+                        <li>Bartöl Treatment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Unsere Arbeiten</h2>
+                <p class="section-subtitle">Lassen Sie sich von unseren Ergebnissen überzeugen</p>
+            </div>
+            
+            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="haircuts">Haarschnitte</button>
+                <button class="filter-btn" data-filter="beards">Bärte</button>
+                <button class="filter-btn" data-filter="styling">Styling</button>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Kontakt & Öffnungszeiten</h2>
+                <p class="section-subtitle">Besuchen Sie uns oder vereinbaren Sie einen Termin</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>Musterstraße 123<br>12345 Musterstadt</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>+49 123 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-Mail</h4>
+                            <p>info@barbershop-bs.de</p>
+                        </div>
+                    </div>
+                    
+                    <div class="opening-hours">
+                        <h4><i class="fas fa-clock"></i> Öffnungszeiten</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span>Montag - Freitag</span>
+                                <span>09:00 - 19:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Samstag</span>
+                                <span>08:00 - 16:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sonntag</span>
+                                <span>Geschlossen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Ihr Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">E-Mail Adresse</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Telefonnummer</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Service auswählen</option>
+                                <option value="haircut">Haarschnitt</option>
+                                <option value="premium">Premium Styling</option>
+                                <option value="shave">Traditionelle Rasur</option>
+                                <option value="beard">Bartpflege</option>
+                            </select>
+                            <label for="service">Gewünschter Service</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4"></textarea>
+                            <label for="message">Ihre Nachricht</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Nachricht Senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="booking-content" data-aos="fade-up">
+                <h2>Termin Online Buchen</h2>
+                <p>Wählen Sie Ihren Wunschtermin bequem online aus</p>
+                <div class="booking-widget">
+                    <!-- Booking widget will be integrated here -->
+                    <div class="booking-placeholder">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Online Terminbuchung</h3>
+                        <p>Unser Buchungssystem wird hier integriert</p>
+                        <a href="tel:+49123456789" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Jetzt Anrufen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cut"></i>
+                        <span>Barbershop BS</span>
+                    </div>
+                    <p>Ihr Premium Herrenfriseur für traditionelle Handwerkskunst und moderne Eleganz.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Haarschnitt</a></li>
+                        <li><a href="#services">Premium Styling</a></li>
+                        <li><a href="#services">Traditionelle Rasur</a></li>
+                        <li><a href="#services">Bartpflege</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Musterstraße 123, 12345 Musterstadt</li>
+                        <li><i class="fas fa-phone"></i> +49 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@barbershop-bs.de</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Öffnungszeiten</h4>
+                    <ul>
+                        <li>Mo - Fr: 09:00 - 19:00</li>
+                        <li>Sa: 08:00 - 16:00</li>
+                        <li>So: Geschlossen</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barbershop BS. Alle Rechte vorbehalten.</p>
+                <div class="footer-links">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
