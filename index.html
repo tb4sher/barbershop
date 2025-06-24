@@ -1,446 +1,670 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbershop BS - Premium Herrenfriseur</title>
-    <meta name="description" content="Moderner Herrenfriseur mit traditionellem Handwerk. Haarschnitte, Bartpflege und Styling in entspannter Atmosphäre.">
+    <title>Barbershop by Hausar Braunschweig - Premium Herrenfriseur | Südstraße 24</title>
+    <meta name="description" content="Premium Barbershop in Braunschweig ✂️ Meisterhafte Haarschnitte & Bartpflege von Hausar. ⭐ 15 Jahre Erfahrung ☎️ 01578 2935906 📍 Südstraße 24">
+    <meta name="keywords" content="Barbershop Braunschweig, Herrenfriseur Braunschweig, Hausar Barbier, Bartpflege Südstraße, Premium Haarschnitt Herren">
+    <meta name="author" content="Barbershop by Hausar">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="DE-NI">
+    <meta name="geo.placename" content="Braunschweig">
+    <meta name="geo.position" content="52.2602614;10.5168954">
+    <meta name="ICBM" content="52.2602614, 10.5168954">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="Bilder/webp/Logo1.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" as="style">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Critical CSS inline für bessere Performance -->
+    <style>
+        :root{--primary-gold:#d4af37;--primary-dark:#1a1a1a;--primary-light:#f8f8f8}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--primary-light);color:var(--primary-dark)}
+        .navbar-premium{position:fixed;top:0;width:100%;background:rgba(26,26,26,0.95);z-index:1000;padding:1rem 0}
+        .hero-premium{min-height:100vh;background:var(--primary-dark);display:flex;align-items:center;justify-content:center}
+    </style>
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons - defer loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="Bilder/webp/Logo1.png" type="image/png">
+    <link rel="apple-touch-icon" href="Bilder/webp/Logo1.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Barbershop by Hausar - Premium Herrenfriseur Braunschweig">
+    <meta property="og:description" content="Meisterhafte Herrenpflege in der Südstraße 24. Professionelle Haarschnitte und Bartpflege vom Experten.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://barber-shop-braunschweig.de">
+    <meta property="og:image" content="https://barber-shop-braunschweig.de/Bilder/webp/Interior.webp">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Optimiertes Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarberShop",
+        "name": "Barbershop by Hausar",
+        "image": ["https://barber-shop-braunschweig.de/Bilder/webp/Interior.webp"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Südstraße 24",
+            "addressLocality": "Braunschweig",
+            "postalCode": "38100",
+            "addressCountry": "DE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 52.2602614,
+            "longitude": 10.5168954
+        },
+        "telephone": "+4915782935906",
+        "email": "info@barber-shop-braunschweig.de",
+        "openingHours": ["Tu-Fr 10:00-19:00", "Sa 10:00-18:00"],
+        "priceRange": "€€",
+        "url": "https://barber-shop-braunschweig.de",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+        }
+    }
+    </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader">
-            <div class="scissors">
-                <i class="fas fa-cut"></i>
-            </div>
-            <div class="loading-text">Barbershop BS</div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <!-- Skip to content link für Accessibility -->
+    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- Optimierte Navigation ohne Logo-Umrandung -->
+    <nav class="navbar navbar-premium" id="navbar" role="navigation">
         <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-cut"></i>
-                <span>Barbershop BS</span>
-            </div>
+            <a href="index.html" class="logo-premium" aria-label="Barbershop by Hausar Startseite">
+                <img src="Bilder/webp/Logo1.png" 
+                     alt="Barbershop by Hausar Logo" 
+                     width="100" 
+                     height="50"
+                     loading="eager">
+            </a>
+            
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">Über Uns</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#gallery" class="nav-link">Galerie</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Kontakt</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#booking" class="nav-link btn-primary">Termin Buchen</a>
-                </li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Über Uns</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="btn-premium">Termin Buchen</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            
+            <button class="mobile-menu-toggle" 
+                    id="mobile-menu" 
+                    aria-label="Menü öffnen" 
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>            <!-- Video placeholder - replace with actual video or use background image -->
-            <div class="hero-image" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-up" data-aos-delay="500">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="progress-bar"></div>
+    </div>
+
+    <main id="main">
+        <!-- Hero Section mit optimiertem Slider -->
+        <section id="home" class="hero-premium">
+            <!-- Optimierter Snapshot Slider mit Lazy Loading -->
+            <div class="hero-bg">
+                <div class="snapshot-slider" data-slider="hero">
+                    <div class="slide active">
+                        <img src="Bilder/webp/Interior.webp" 
+                             alt="Barbershop by Hausar Innenraum - Premium Ambiente"
+                             width="1920" 
+                             height="1080"
+                             loading="eager">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Hausar(Besitzer).webp" 
+                             alt="Hausar - Inhaber und Meister-Barbier"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Geräte.webp" 
+                             alt="Professionelle Barbershop Ausstattung"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="title-line">Traditionelles</span>
-                    <span class="title-line">Handwerk</span>
-                    <span class="title-highlight">Moderne Eleganz</span>
+                    <img src="Bilder/webp/logo2.png" 
+                         alt="Barbershop by Hausar" 
+                         class="hero-logo"
+                         width="400" 
+                         height="150">
+                    <span class="title-subtitle">Premium Herrenpflege in Braunschweig</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Erleben Sie die perfekte Symbiose aus klassischer Barbier-Kunst 
-                    und zeitgemäßem Styling in unserem exklusiven Herrensalon.
+                
+                <p class="hero-description">
+                    Meisterhafte Handwerkskunst trifft auf moderne Eleganz. 
+                    Ihr Premium-Barbershop in der Südstraße.
                 </p>
+                
                 <div class="hero-buttons">
-                    <a href="#booking" class="btn btn-primary">
-                        <i class="fas fa-calendar-alt"></i>
-                        Termin Buchen
+                    <a href="tel:015782935906" class="btn-premium btn-call">
+                        <i class="fas fa-phone"></i>
+                        Jetzt anrufen
                     </a>
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-play"></i>
-                        Services Entdecken
-                    </a>
-                </div>
-            </div>
-            <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="500">0</div>
-                    <div class="stat-label">Zufriedene Kunden</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="5">0</div>
-                    <div class="stat-label">Jahre Erfahrung</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="15">0</div>
-                    <div class="stat-label">Premium Services</div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="scroll-text">Scroll Down</div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Über Barbershop BS</h2>
-                <p class="section-subtitle">Tradition trifft Innovation</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <h3>Meisterhafte Handwerkskunst seit 2019</h3>
-                    <p>
-                        In unserem modernen Barbershop verbinden wir traditionelle Techniken 
-                        mit zeitgemäßen Trends. Jeder Haarschnitt wird individuell auf Sie 
-                        abgestimmt und mit höchster Präzision ausgeführt.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Meisterqualität</h4>
-                                <p>Ausgebildete Friseurmeister mit jahrelanger Erfahrung</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-leaf"></i>
-                            <div>
-                                <h4>Premium Produkte</h4>
-                                <p>Nur hochwertige, natürliche Pflegeprodukte</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Flexible Termine</h4>
-                                <p>Auch abends und am Wochenende für Sie da</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image" data-aos="fade-left">                <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbershop Interior">
-                    <div class="floating-card">
-                            <i class="fas fa-star"></i>
-                            <div>
-                                <strong>4.9/5</strong>
-                                <span>Google Bewertungen</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Unsere Services</h2>
-                <p class="section-subtitle">Professionelle Pflege für den modernen Mann</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
+                    <a href="#services" class="btn-glass">
                         <i class="fas fa-cut"></i>
-                    </div>
-                    <h3>Klassischer Haarschnitt</h3>
-                    <p>Präzise Schnitte nach Ihren Wünschen mit traditionellen und modernen Techniken.</p>
-                    <div class="service-price">ab 35€</div>
-                    <ul class="service-features">
-                        <li>Beratung & Analyse</li>
-                        <li>Waschen & Schneiden</li>
-                        <li>Styling & Finish</li>
-                    </ul>
-                </div>
-
-                <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-badge">Beliebt</div>
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Premium Styling</h3>
-                    <p>Komplettes Makeover mit Haarschnitt, Bartpflege und professionellem Styling.</p>
-                    <div class="service-price">ab 65€</div>
-                    <ul class="service-features">
-                        <li>Komplettberatung</li>
-                        <li>Haarschnitt & Bart</li>
-                        <li>Gesichtspflege</li>
-                        <li>Premium Produkte</li>
-                    </ul>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Traditionelle Rasur</h3>
-                    <p>Entspannende Heißschaumrasur mit handgeschärften Messern und Aftershave.</p>
-                    <div class="service-price">ab 25€</div>
-                    <ul class="service-features">
-                        <li>Heißer Handtuch</li>
-                        <li>Rasiermesser</li>
-                        <li>Gesichtsmassage</li>
-                    </ul>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Bartpflege</h3>
-                    <p>Professionelle Bartformung, Trimmen und Pflege für den perfekten Look.</p>
-                    <div class="service-price">ab 20€</div>
-                    <ul class="service-features">
-                        <li>Bart trimmen</li>
-                        <li>Konturenschnitt</li>
-                        <li>Bartöl Treatment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Unsere Arbeiten</h2>
-                <p class="section-subtitle">Lassen Sie sich von unseren Ergebnissen überzeugen</p>
-            </div>
-            
-            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="200">
-                <button class="filter-btn active" data-filter="all">Alle</button>
-                <button class="filter-btn" data-filter="haircuts">Haarschnitte</button>
-                <button class="filter-btn" data-filter="beards">Bärte</button>
-                <button class="filter-btn" data-filter="styling">Styling</button>
-            </div>
-            
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Gallery items will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Kontakt & Öffnungszeiten</h2>
-                <p class="section-subtitle">Besuchen Sie uns oder vereinbaren Sie einen Termin</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Adresse</h4>
-                            <p>Musterstraße 123<br>12345 Musterstadt</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Telefon</h4>
-                            <p>+49 123 456 789</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>E-Mail</h4>
-                            <p>info@barbershop-bs.de</p>
-                        </div>
-                    </div>
-                    
-                    <div class="opening-hours">
-                        <h4><i class="fas fa-clock"></i> Öffnungszeiten</h4>
-                        <div class="hours-grid">
-                            <div class="hours-item">
-                                <span>Montag - Freitag</span>
-                                <span>09:00 - 19:00</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Samstag</span>
-                                <span>08:00 - 16:00</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Sonntag</span>
-                                <span>Geschlossen</span>
-                            </div>
-                        </div>
-                    </div>
+                        Unsere Services
+                    </a>
                 </div>
                 
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">Ihr Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">E-Mail Adresse</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone">
-                            <label for="phone">Telefonnummer</label>
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Service auswählen</option>
-                                <option value="haircut">Haarschnitt</option>
-                                <option value="premium">Premium Styling</option>
-                                <option value="shave">Traditionelle Rasur</option>
-                                <option value="beard">Bartpflege</option>
-                            </select>
-                            <label for="service">Gewünschter Service</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="4"></textarea>
-                            <label for="message">Ihre Nachricht</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Nachricht Senden
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="booking" class="booking-section">
-        <div class="container">
-            <div class="booking-content" data-aos="fade-up">
-                <h2>Termin Online Buchen</h2>
-                <p>Wählen Sie Ihren Wunschtermin bequem online aus</p>
-                <div class="booking-widget">
-                    <!-- Booking widget will be integrated here -->
-                    <div class="booking-placeholder">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Online Terminbuchung</h3>
-                        <p>Unser Buchungssystem wird hier integriert</p>
-                        <a href="tel:+49123456789" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
-                            Jetzt Anrufen
-                        </a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Jahre Erfahrung</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Zufriedene Kunden</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.8★</span>
+                        <span class="stat-label">Google Bewertung</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-light">Über Barbershop by Hausar</h2>
+                    <p class="section-subtitle text-light">Tradition trifft Innovation in der Südstraße</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Meisterhafte Handwerkskunst</h3>
+                        <p>Willkommen bei Barbershop by Hausar in der Südstraße 24! Mit über 15 Jahren Erfahrung steht Hausar für höchste Qualität in der Herrenpflege. Traditionelle Barbier-Kunst trifft hier auf moderne Techniken.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Premium Qualität</h4>
+                                    <p>Nur hochwertige Produkte und Werkzeuge</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Pünktlich & Zuverlässig</h4>
+                                    <p>Termine ohne Wartezeit</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-user-tie"></i>
+                                <div>
+                                    <h4>Persönliche Beratung</h4>
+                                    <p>Individueller Style für jeden Typ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image">
+                        <div class="image-card">
+                            <img src="Bilder/webp/Hausar(Besitzer).webp" 
+                                 alt="Hausar - Inhaber und Meister-Barbier des Barbershops Braunschweig"
+                                 width="600" 
+                                 height="600"
+                                 loading="lazy">
+                            <div class="floating-badge owner-badge">
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>Hausar</strong>
+                                    <span>Inhaber & Meister</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-luxury">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Unsere Premium Services</h2>
+                    <p class="section-subtitle">Exklusive Dienstleistungen für den modernen Mann</p>
+                </div>
+                
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="Bilder/webp/Nachher.webp" 
+                                 alt="Premium Haarschnitt Ergebnis"
+                                 width="400" 
+                                 height="300"
+                                 loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>Premium Haarschnitt</h3>
+                            <p>Individueller Schnitt mit persönlicher Stilberatung</p>
+                            <ul class="service-features">
+                                <li>Ausführliche Beratung</li>
+                                <li>Präzisionsschnitt</li>
+                                <li>Styling inklusive</li>
+                                <li>Pflegeprodukte</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card featured">
+                        <div class="service-badge">BELIEBT</div>
+                        <div class="service-image">
+                            <img src="Bilder/webp/FullMakeOver.webp" 
+                                 alt="Komplettpaket Deluxe Transformation"
+                                 width="400" 
+                                 height="300"
+                                 loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3>Komplettpaket Deluxe</h3>
+                            <p>Das ultimative Grooming-Erlebnis für Gentlemen</p>
+                            <ul class="service-features">
+                                <li>Premium Haarschnitt</li>
+                                <li>Bart-Styling</li>
+                                <li>Hot Towel Treatment</li>
+                                <li>Gesichtspflege</li>
+                                <li>Augenbrauen-Styling</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="Bilder/webp/Nachher_Bart.webp" 
+                                 alt="Professionelle Bartpflege Ergebnis"
+                                 width="400" 
+                                 height="300"
+                                 loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3>Bartpflege Premium</h3>
+                            <p>Professionelle Bartpflege mit traditioneller Rasur</p>
+                            <ul class="service-features">
+                                <li>Bart-Trimming</li>
+                                <li>Konturierung</li>
+                                <li>Hot Towel Rasur</li>
+                                <li>Bartöl-Treatment</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optimized Gallery Section -->
+        <section id="gallery" class="section-padding bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-light">Unsere Arbeit</h2>
+                    <p class="section-subtitle text-light">Überzeugen Sie sich von unserer Qualität</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <!-- Erste Reihe - sofort laden -->
+                    <div class="gallery-item" data-gallery-index="0">
+                        <img src="Bilder/webp/Vorher_Nachher.webp" 
+                             alt="Beeindruckende Haar-Transformation - Vorher Nachher Vergleich"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Komplette Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item vip-client" data-gallery-index="1">
+                        <img src="Bilder/webp/Michael_Schultz4.webp" 
+                             alt="VIP Kunde Michael Schultz - Premium Styling"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Michael Schultz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-gallery-index="2">
+                        <img src="Bilder/webp/Nachher.webp" 
+                             alt="Perfekter Premium Haarschnitt"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Premium Ergebnis</h4>
+                            <p>Moderner Style</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Lazy loaded images -->
+                    <div class="gallery-item vip-client" data-gallery-index="3">
+                        <img data-src="Bilder/webp/Felix_Kroos.webp" 
+                             alt="VIP Kunde Felix Kroos - Exklusives Styling"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Felix Kroos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-gallery-index="4">
+                        <img data-src="Bilder/webp/FullMakeOver.webp" 
+                             alt="Komplette Verwandlung - Full Makeover"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Full MakeOver</h4>
+                            <p>Rundum-Erneuerung</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-gallery-index="5">
+                        <img data-src="Bilder/webp/Nachher_Bart.webp" 
+                             alt="Präzise Bartformung - Meisterhafte Bartpflege"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Bart Perfektion</h4>
+                            <p>Präzise Formgebung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section id="instagram" class="section-padding bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-light">Folgen Sie uns auf Instagram</h2>
+                    <p class="section-subtitle text-light">Aktuelle Arbeiten und Behind-the-Scenes</p>
+                </div>
+                
+                <div class="instagram-content">
+                    
+                    <div class="instagram-widget">
+                        <div class="instagram-header">
+                            <div class="instagram-profile">
+                                <div class="profile-avatar">
+                                    <img src="Bilder/webp/Logo1.png" alt="Barbershop by Hausar Instagram" width="60" height="60">
+                                </div>
+                                <div class="profile-info">
+                                    <h3>@barber_shop_bs</h3>
+                                    <p>Barbershop by Hausar</p>
+                                </div>
+                                <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" class="follow-btn">
+                                    <i class="fab fa-instagram"></i>
+                                    Folgen
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="instagram-grid">
+                            
+                            
+                            
+                            <div class="instagram-embed-wrapper">
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/Cj7kJ39qhak/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/Cj7kJ39qhak/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Sieh dir diesen Beitrag auf Instagram an</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/Cj7kJ39qhak/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Ein Beitrag geteilt von Hausar N. | Herren Friseur | Braunschweig (@barber_shop_bs)</a></p></div></blockquote>
+                            </div>
+                            
+                            
+                            <div class="instagram-embed-wrapper">
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DGA0x1jseME/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DGA0x1jseME/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Sieh dir diesen Beitrag auf Instagram an</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DGA0x1jseME/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Ein Beitrag geteilt von Hausar N. | Herren Friseur | Braunschweig (@barber_shop_bs)</a></p></div></blockquote>
+                            </div>
+                            
+                            
+                            <div class="instagram-embed-wrapper">
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CeXFGwfKzm_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CeXFGwfKzm_/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Sieh dir diesen Beitrag auf Instagram an</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CeXFGwfKzm_/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Ein Beitrag geteilt von Hausar N. | Herren Friseur | Braunschweig (@barber_shop_bs)</a></p></div></blockquote>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-footer">
+                            <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" class="btn-premium">
+                                <i class="fab fa-instagram"></i>
+                                Mehr auf Instagram ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-premium">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Kontakt & Terminbuchung</h2>
+                    <p class="section-subtitle">Vereinbaren Sie Ihren Premium-Termin</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Besuchen Sie uns</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p><a href="https://maps.google.com/?q=Südstraße+24+38100+Braunschweig" target="_blank" rel="noopener">
+                                    Südstraße 24<br>38100 Braunschweig
+                                </a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p><a href="tel:015782935906" class="phone-link">01578 2935906</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Öffnungszeiten</h4>
+                                <p>Di-Fr: 10:00-19:00<br>Sa: 10:00-18:00<br>Mo & So: Geschlossen</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-info-container">
+                        <h3>Ihr Premium-Termin</h3>
+                        <p class="booking-notice">Für eine persönliche Beratung und optimale Terminplanung nehmen wir Ihre Buchung gerne telefonisch entgegen.</p>
+                        
+                        <div class="booking-cta">
+                            <a href="tel:015782935906" class="btn-premium btn-large">
+                                <i class="fas fa-phone-volume"></i>
+                                Jetzt anrufen & Termin sichern
+                            </a>
+                        </div>
+                        
+                        <div class="booking-trust">
+                            <div class="trust-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.9/5 Sterne bei Google</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-users"></i>
+                                <span>Über 5000 zufriedene Kunden</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-cut"></i>
-                        <span>Barbershop BS</span>
-                    </div>
-                    <p>Ihr Premium Herrenfriseur für traditionelle Handwerkskunst und moderne Eleganz.</p>
+                    <h3>Barbershop by Hausar</h3>
+                    <p>Ihr Premium-Barbershop für exklusive Herrenpflege in Braunschweig.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                        <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://g.page/barbershop-braunschweig" target="_blank" rel="noopener" aria-label="Google Business">
+                            <i class="fab fa-google"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#services">Haarschnitt</a></li>
-                        <li><a href="#services">Premium Styling</a></li>
-                        <li><a href="#services">Traditionelle Rasur</a></li>
-                        <li><a href="#services">Bartpflege</a></li>
+                        <li><a href="#services">Services & Preise</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#about">Über Hausar</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Kontakt</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Musterstraße 123, 12345 Musterstadt</li>
-                        <li><i class="fas fa-phone"></i> +49 123 456 789</li>
-                        <li><i class="fas fa-envelope"></i> info@barbershop-bs.de</li>
-                    </ul>
+                    <p><i class="fas fa-map-marker-alt"></i> Südstraße 24, 38100 Braunschweig</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:015782935906">01578 2935906</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@barber-shop-braunschweig.de">info@barber-shop-braunschweig.de</a></p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Öffnungszeiten</h4>
+                    <h4>Rechtliches</h4>
                     <ul>
-                        <li>Mo - Fr: 09:00 - 19:00</li>
-                        <li>Sa: 08:00 - 16:00</li>
-                        <li>So: Geschlossen</li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Barbershop BS. Alle Rechte vorbehalten.</p>
-                <div class="footer-links">
-                    <a href="#">Impressum</a>
-                    <a href="#">Datenschutz</a>
-                    <a href="#">AGB</a>
-                </div>
+                <p>&copy; 2025 Barbershop by Hausar. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildergalerie">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Schließen">&times;</button>
+            <div class="lightbox-media">
+                <img id="lightbox-image" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+            <div class="lightbox-navigation">
+                <button id="lightbox-prev" class="lightbox-nav-btn" aria-label="Vorheriges Bild">‹</button>
+                <button id="lightbox-next" class="lightbox-nav-btn" aria-label="Nächstes Bild">›</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main-simplified.js" defer></script>
+    
+    <!-- Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
+    
+    <!-- Instagram Posts Funktionalität -->
+    <script>
+        // Instagram Embeds verarbeiten und anzeigen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Instagram Embed Script neu laden für dynamische Verarbeitung
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            } else {
+                // Falls Instagram Script noch nicht geladen, warten und erneut versuchen
+                setTimeout(function() {
+                    if (window.instgrm) {
+                        window.instgrm.Embeds.process();
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Legacy Instagram Posts Funktionalität (falls noch verwendet)
+        document.addEventListener('DOMContentLoaded', function() {
+            const instagramPosts = document.querySelectorAll('.instagram-post');
+            
+            instagramPosts.forEach(post => {
+                const postUrl = post.dataset.postUrl || 'https://www.instagram.com/barber_shop_bs/';
+                
+                post.addEventListener('click', function() {
+                    window.open(postUrl, '_blank', 'noopener,noreferrer');
+                });
+                
+                // Keyboard accessibility
+                post.setAttribute('tabindex', '0');
+                post.setAttribute('role', 'button');
+                post.setAttribute('aria-label', 'Instagram Post anzeigen');
+                
+                post.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        window.open(postUrl, '_blank', 'noopener,noreferrer');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

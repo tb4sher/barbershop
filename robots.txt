@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://barber-shop-braunschweig.de/sitemap.xml
+
+# Crawl-delay für bessere Server-Performance
+Crawl-delay: 1
+
+# Spezifische Disallows
+Disallow: /css/
+Disallow: /js/
+Disallow: *.md$
+Disallow: /MOBILE_LOGO_FIXES_COMPLETE.md
+Disallow: /OPTIMIZATION_COMPLETE.md
+Disallow: /WEBSITE_REPARATUR_COMPLETE.md
+Disallow: /FINAL_IMPLEMENTATION_COMPLETE.md
+
+# Erlaubte wichtige Ressourcen
+Allow: /css/style.css
+Allow: /js/main-simplified.js
+Allow: /Bilder/
+Allow: /Videos/
+
+# Spezielle Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# SEO-Hinweis: Hauptseite priorisieren
+# Wichtigste Seiten für Crawler:
+# https://barber-shop-braunschweig.de/
+# https://barber-shop-braunschweig.de/index.html

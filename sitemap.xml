@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Hauptseite -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Startseite explizit -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/index.html</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Impressum -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/impressum.html</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Datenschutzerklärung -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/datenschutz.html</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- AGB -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/agb.html</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- 404 Seite -->
+  <url>
+    <loc>https://barber-shop-braunschweig.de/404.html</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+</urlset>
