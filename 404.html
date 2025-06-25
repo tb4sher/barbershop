@@ -3,264 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Seite nicht gefunden | Barbershop by Hausar</title>
-    <meta name="description" content="Die angeforderte Seite wurde nicht gefunden. Zurück zur Barbershop by Hausar Startseite.">
-    <meta name="robots" content="noindex, nofollow">
-    
-    <!-- Performance Optimierung -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Kritische CSS inline für bessere Performance -->
-    <style>
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: var(--primary-gold);
-            color: var(--primary-dark);
-            padding: 8px;
-            text-decoration: none;
-            border-radius: 4px;
-            z-index: 10001;
-        }
-        .skip-link:focus {
-            top: 6px;
-        }
-    </style>
-    
-    <!-- Stylesheets -->
+    <title>404 - Seite nicht gefunden</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons - defer loading -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="Bilder/webp/Logo1.png" type="image/png">
-    <link rel="apple-touch-icon" href="Bilder/webp/Logo1.png">
-</head>
-<body>
-    <!-- Skip to content link für Accessibility -->
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
-    
-    <!-- Optimierte Navigation ohne Logo-Umrandung -->
-    <nav class="navbar navbar-premium" id="navbar" role="navigation">
-        <div class="nav-container">
-            <a href="index.html" class="logo-premium" aria-label="Barbershop by Hausar Startseite">
-                <img src="Bilder/webp/Logo1.png" 
-                     alt="Barbershop by Hausar Logo" 
-                     width="100" 
-                     height="50"
-                     loading="eager">
-            </a>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#about" class="nav-link">Über Uns</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#gallery" class="nav-link">Galerie</a></li>
-                <li><a href="index.html#contact" class="btn-premium">Termin Buchen</a></li>
-            </ul>
-            
-            <button class="mobile-menu-toggle" 
-                    id="mobile-menu" 
-                    aria-label="Menü öffnen" 
-                    aria-expanded="false"
-                    aria-controls="nav-menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" aria-hidden="true">
-        <div class="progress-bar"></div>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main" class="error-page">
-        <section class="section-padding bg-dark">
-            <div class="container">
-                <div class="error-content text-center">
-                    <div class="error-icon">
-                        <i class="fas fa-cut" style="font-size: 4rem; color: var(--primary-gold); margin-bottom: 2rem;"></i>
-                    </div>
-                    
-                    <h1 class="section-title text-light mb-4">404</h1>
-                    <h2 class="text-light mb-4">Seite nicht gefunden</h2>
-                    
-                    <p class="text-light mb-5" style="font-size: 1.2rem; opacity: 0.8;">
-                        Die angeforderte Seite existiert nicht oder wurde verschoben.<br>
-                        Kein Problem - kehren Sie zu unserer Startseite zurück und entdecken Sie unsere Premium-Services.
-                    </p>
-                    
-                    <div class="error-actions">
-                        <a href="index.html" class="btn-premium me-3">
-                            <i class="fas fa-home"></i>
-                            Zur Startseite
-                        </a>
-                        <a href="index.html#contact" class="btn-outline-gold">
-                            <i class="fas fa-calendar-alt"></i>
-                            Termin Buchen
-                        </a>
-                    </div>
-                    
-                    <div class="error-suggestions mt-5">
-                        <h3 class="text-light mb-4">Oder besuchen Sie direkt:</h3>
-                        <div class="suggestion-links">
-                            <a href="index.html#services" class="suggestion-link">
-                                <i class="fas fa-scissors"></i>
-                                <span>Unsere Services</span>
-                            </a>
-                            <a href="index.html#gallery" class="suggestion-link">
-                                <i class="fas fa-images"></i>
-                                <span>Galerie</span>
-                            </a>
-                            <a href="index.html#about" class="suggestion-link">
-                                <i class="fas fa-user"></i>
-                                <span>Über Hausar</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Barbershop by Hausar</h3>
-                    <p>Ihr Premium-Friseur für anspruchsvolle Herrenpflege in der Südstraße.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.google.com/maps/place/Barber+Shop+-+Braunschweig/@52.2602614,10.5168954,17z/" target="_blank" rel="noopener" aria-label="Google Maps"><i class="fab fa-google"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#services">Services & Preise</a></li>
-                        <li><a href="index.html#gallery">Galerie</a></li>
-                        <li><a href="index.html#about">Über Hausar</a></li>
-                        <li><a href="index.html#contact">Kontakt</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Kontakt</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Südstraße 24, 38100 Braunschweig</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:015782935906">01578 2935906</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@barber-shop-braunschweig.de">info@barber-shop-braunschweig.de</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Rechtliches</h4>
-                    <ul>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
-                        <li><a href="agb.html">AGB</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Barbershop by Hausar. Alle Rechte vorbehalten.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main-simplified.js" defer></script>
-    
     <style>
-        .error-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
+        body { 
+            background-color: #1a1a1a; 
+            color: #f8f8f8; 
+            font-family: 'Inter', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .error-actions .btn-premium,
-        .error-actions .btn-outline-gold {
-            margin: 0.5rem;
+        .error-container {
+            text-align: center;
+            margin: auto;
+            padding: 40px;
+        }
+        .error-code {
+            font-size: 10rem;
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            line-height: 1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        .error-title {
+            font-size: 2rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .error-message {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .btn-home {
+            background: var(--gradient-luxury, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
-        .btn-outline-gold {
-            background: transparent;
-            border: 2px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-normal);
-        }
-        
-        .btn-outline-gold:hover {
-            background: var(--primary-gold);
-            color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .suggestion-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .suggestion-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--text-light);
-            transition: var(--transition-normal);
-            min-width: 120px;
-        }
-        
-        .suggestion-link:hover {
-            background: rgba(212, 175, 55, 0.1);
+        .btn-home:hover {
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
-        
-        .suggestion-link i {
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-        }
-        
-        @media (max-width: 768px) {
-            .error-actions .btn-premium,
-            .error-actions .btn-outline-gold {
-                display: block;
-                margin: 0.5rem auto;
-                text-align: center;
-            }
-            
-            .suggestion-links {
-                gap: 1rem;
-            }
-            
-            .suggestion-link {
-                min-width: 100px;
-                padding: 0.75rem;
-            }
+        header, footer {
+            flex-shrink: 0;
         }
     </style>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Seite nicht gefunden</h1>
+        <p class="error-message">Hoppla! Die von Ihnen gesuchte Seite scheint sich verirrt zu haben.<br>Vielleicht finden Sie auf unserer Startseite, was Sie suchen.</p>
+        <a href="index.html" class="btn-home">
+            <i class="fas fa-home"></i>
+            Zurück zur Startseite
+        </a>
+    </div>
+
+    <footer id="footer-placeholder" class="footer"></footer>
+    <script src="js/main-simplified.js" defer></script>
 </body>
 </html>

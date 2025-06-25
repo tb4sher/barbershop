@@ -1,35 +1,59 @@
 /**
  * BARBERSHOP BY HAUSAR - Optimierte Version
- * Performance-fokussiert mit reduzierten Animationen
+ * Performance-fokussiert mit wiederverwendbaren Komponenten
  */
 
 class BarbershopOptimized {
     constructor() {
+        // Initialisierung, sobald das Skript geladen wird
         this.init();
     }
 
-    init() {
-        // Kritische Funktionen zuerst
-        this.initNavigation();
-        this.initScrollProgress();
+    async init() {
+        // Lade Header und Footer zuerst
+        await this.loadSharedComponents();
+
+        // Initialisiere den Rest der Funktionalität, NACHDEM Header/Footer geladen sind
+        this.initNavigation(); // Hängt vom geladenen Header ab
         
-        // Lazy Loading und Performance
+        // NEU: Scroll-basiertes aktives Menü-Highlighting
+        this.initActiveNavOnScroll();
+        
         if ('IntersectionObserver' in window) {
             this.initLazyLoading();
             this.initScrollAnimations();
         }
         
-        // Interaktive Features
-        this.initGallery();
+        this.initAllGalleries(); 
         this.initOptimizedSlider();
         
-        // Mobile Optimierungen
         if (window.matchMedia('(max-width: 768px)').matches) {
             this.initMobileOptimizations();
         }
         
-        // Accessibility
         this.initAccessibility();
+    }
+    
+    // Funktion zum Laden von Header und Footer
+    async loadSharedComponents() {
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+
+        const fetchHeader = fetch('header.html').then(response => response.ok ? response.text() : '');
+        const fetchFooter = fetch('footer.html').then(response => response.ok ? response.text() : '');
+
+        try {
+            const [headerHtml, footerHtml] = await Promise.all([fetchHeader, fetchFooter]);
+
+            if (headerPlaceholder && headerHtml) {
+                headerPlaceholder.innerHTML = headerHtml;
+            }
+            if (footerPlaceholder && footerHtml) {
+                footerPlaceholder.innerHTML = footerHtml;
+            }
+        } catch (error) {
+            console.error('Fehler beim Laden der Komponenten:', error);
+        }
     }
 
     // Navigation mit reduzierten Abständen
@@ -39,25 +63,24 @@ class BarbershopOptimized {
         const navMenu = document.querySelector('.nav-menu');
         const navLinks = document.querySelectorAll('.nav-link, .btn-premium');
 
-        // Smooth Scroll für Anker-Links
         navLinks.forEach(link => {
-            if (link.getAttribute('href')?.startsWith('#')) {
+            const linkUrl = new URL(link.href, window.location.href);
+            const currentUrl = new URL(window.location.href);
+            
+            if (linkUrl.pathname === currentUrl.pathname && link.hash) {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const target = document.querySelector(targetId);
+                    const target = document.querySelector(link.hash);
                     
                     if (target) {
-                        // Mobile Menu schließen
-                        if (navMenu.classList.contains('active')) {
+                        if (navMenu && menuToggle && navMenu.classList.contains('active')) {
                             navMenu.classList.remove('active');
                             menuToggle.classList.remove('active');
                             menuToggle.setAttribute('aria-expanded', 'false');
                             document.body.style.overflow = '';
                         }
                         
-                        // Smooth scroll mit Offset
-                        const navHeight = navbar.offsetHeight;
+                        const navHeight = navbar ? navbar.offsetHeight : 70;
                         const targetPosition = target.offsetTop - navHeight;
                         
                         window.scrollTo({
@@ -69,88 +92,73 @@ class BarbershopOptimized {
             }
         });
 
-        // Mobile Menu Toggle
         if (menuToggle && navMenu) {
             menuToggle.addEventListener('click', () => {
                 const isActive = navMenu.classList.contains('active');
-                
                 navMenu.classList.toggle('active');
                 menuToggle.classList.toggle('active');
-                menuToggle.setAttribute('aria-expanded', !isActive);
-                
-                // Prevent body scroll when menu is open
+                menuToggle.setAttribute('aria-expanded', String(!isActive));
                 document.body.style.overflow = isActive ? '' : 'hidden';
-            });
-
-            // Close menu on outside click
-            document.addEventListener('click', (e) => {
-                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                }
             });
         }
 
-        // Navbar scroll effect - optimiert
-        let lastScroll = 0;
-        let ticking = false;
-        
-        const handleScroll = () => {
-            const currentScroll = window.scrollY;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-            ticking = false;
-        };
-        
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(handleScroll);
-                ticking = true;
-            }
-        }, { passive: true });
+        if (navbar) {
+             let ticking = false;
+             window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY > 100) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+    }
+    
+    // KORREKTUR & NEUE FUNKTION: Hebt den aktuellen Menüpunkt beim Scrollen hervor
+    initActiveNavOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+
+        if (!sections.length || !navLinks.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        // Überprüfe, ob der Link auf die Sektion verweist
+                        if (link.getAttribute('href').endsWith('#' + entry.target.id)) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            // Die Sektion gilt als aktiv, wenn sie zu 50% sichtbar ist
+            threshold: 0.5 
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     }
 
-    // Scroll Progress Bar
-    initScrollProgress() {
-        const progressBar = document.querySelector('.progress-bar');
-        if (!progressBar) return;
-        
-        let ticking = false;
-        
-        const updateProgress = () => {
-            const winScroll = window.scrollY;
-            const height = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + '%';
-            ticking = false;
-        };
-        
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateProgress);
-                ticking = true;
-            }
-        }, { passive: true });
-    }
 
     // Optimiertes Lazy Loading
     initLazyLoading() {
         const lazyImages = document.querySelectorAll('img[data-src], img.lazy');
         
-        const imageObserver = new IntersectionObserver((entries) => {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     
-                    // Load image
                     if (img.dataset.src) {
                         img.src = img.dataset.src;
                         img.removeAttribute('data-src');
@@ -158,7 +166,7 @@ class BarbershopOptimized {
                     
                     img.classList.add('loaded');
                     img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    observer.unobserve(img);
                 }
             });
         }, {
@@ -175,25 +183,14 @@ class BarbershopOptimized {
         if (!slider) return;
         
         const slides = slider.querySelectorAll('.slide');
+        if (slides.length <= 1) return;
+
         let currentSlide = 0;
         
-        // Preload first two slides
-        slides.forEach((slide, index) => {
-            if (index <= 1) {
-                const img = slide.querySelector('img[data-src]');
-                if (img) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                }
-            }
-        });
-        
-        // Start slideshow
         setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             
-            // Load next image if needed
             const nextSlide = slides[currentSlide];
             const img = nextSlide.querySelector('img[data-src]');
             if (img) {
@@ -202,142 +199,131 @@ class BarbershopOptimized {
             }
             
             nextSlide.classList.add('active');
-            
-            // Preload next image
-            const upcomingIndex = (currentSlide + 1) % slides.length;
-            const upcomingImg = slides[upcomingIndex].querySelector('img[data-src]');
-            if (upcomingImg) {
-                const preloadImg = new Image();
-                preloadImg.src = upcomingImg.dataset.src;
-            }
         }, 5000);
     }
 
-    // Gallery mit Lightbox
-    initGallery() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
+    // Kombinierte Initialisierung für alle Galerien
+    initAllGalleries() {
+        const clickableItems = document.querySelectorAll('.gallery-item, .video-item');
         const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxTitle = document.getElementById('lightbox-title');
-        const lightboxDescription = document.getElementById('lightbox-description');
         const closeBtn = document.querySelector('.lightbox-close');
-        const prevBtn = document.getElementById('lightbox-prev');
-        const nextBtn = document.getElementById('lightbox-next');
-        
-        let currentIndex = 0;
-        const galleryData = [];
-        
-        // Collect gallery data
-        galleryItems.forEach((item, index) => {
-            const img = item.querySelector('img');
-            const overlay = item.querySelector('.gallery-overlay');
-            
-            if (img) {
-                galleryData.push({
+
+        if (!lightbox || !closeBtn || clickableItems.length === 0) return;
+
+        this.galleryData = Array.from(clickableItems).map(item => {
+            const type = item.dataset.type || 'image';
+            if (type === 'video') {
+                const video = item.querySelector('video source');
+                const info = item.querySelector('.video-info');
+                return {
+                    type: 'video',
+                    src: video ? video.src : '',
+                    title: info?.querySelector('h4')?.textContent || '',
+                    description: info?.querySelector('p')?.textContent || ''
+                };
+            } else { // 'image'
+                const img = item.querySelector('img');
+                const overlay = item.querySelector('.gallery-overlay, .snapshot-overlay');
+                return {
+                    type: 'image',
                     src: img.src || img.dataset.src,
                     alt: img.alt,
                     title: overlay?.querySelector('h4')?.textContent || '',
                     description: overlay?.querySelector('p')?.textContent || ''
-                });
-                
-                // Add click event
-                item.addEventListener('click', () => {
-                    currentIndex = index;
-                    this.openLightbox(currentIndex);
-                });
-                
-                item.style.cursor = 'pointer';
+                };
             }
         });
         
-        // Lightbox controls
-        closeBtn?.addEventListener('click', () => this.closeLightbox());
-        
-        lightbox?.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                this.closeLightbox();
-            }
+        clickableItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this.currentIndex = index;
+                this.openLightbox(this.currentIndex);
+            });
+            item.style.cursor = 'pointer';
         });
-        
-        prevBtn?.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
-            this.updateLightbox(currentIndex);
-        });
-        
-        nextBtn?.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % galleryData.length;
-            this.updateLightbox(currentIndex);
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox?.classList.contains('show')) {
-                switch(e.key) {
-                    case 'Escape':
-                        this.closeLightbox();
-                        break;
-                    case 'ArrowLeft':
-                        prevBtn.click();
-                        break;
-                    case 'ArrowRight':
-                        nextBtn.click();
-                        break;
-                }
-            }
-        });
-        
-        // Store methods for lightbox
-        this.galleryData = galleryData;
+
         this.lightbox = lightbox;
-        this.lightboxImage = lightboxImage;
-        this.lightboxTitle = lightboxTitle;
-        this.lightboxDescription = lightboxDescription;
+        this.lightboxImage = document.getElementById('lightbox-image');
+        this.lightboxVideo = document.getElementById('lightbox-video');
+        this.lightboxVideoSource = document.getElementById('lightbox-video-source');
+        this.lightboxTitle = document.getElementById('lightbox-title');
+        this.lightboxDescription = document.getElementById('lightbox-description');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+
+        closeBtn.addEventListener('click', () => this.closeLightbox());
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) this.closeLightbox();
+        });
+        prevBtn?.addEventListener('click', () => this.showPrevItem());
+        nextBtn?.addEventListener('click', () => this.showNextItem());
+        
+        document.addEventListener('keydown', (e) => {
+            if (this.lightbox.classList.contains('show')) {
+                if (e.key === 'Escape') this.closeLightbox();
+                if (e.key === 'ArrowLeft') this.showPrevItem();
+                if (e.key === 'ArrowRight') this.showNextItem();
+            }
+        });
     }
     
     openLightbox(index) {
-        const item = this.galleryData[index];
-        if (!item) return;
-        
         this.updateLightbox(index);
         this.lightbox.classList.add('show');
         document.body.style.overflow = 'hidden';
     }
-    
-    updateLightbox(index) {
-        const item = this.galleryData[index];
-        if (!item) return;
-        
-        // Load image if needed
-        if (item.src) {
-            this.lightboxImage.src = item.src;
-            this.lightboxImage.alt = item.alt;
-        }
-        
-        this.lightboxTitle.textContent = item.title;
-        this.lightboxDescription.textContent = item.description;
-        
-        // Update navigation buttons
-        const prevBtn = document.getElementById('lightbox-prev');
-        const nextBtn = document.getElementById('lightbox-next');
-        
-        prevBtn.style.display = this.galleryData.length > 1 ? 'flex' : 'none';
-        nextBtn.style.display = this.galleryData.length > 1 ? 'flex' : 'none';
-    }
-    
+
     closeLightbox() {
         this.lightbox.classList.remove('show');
         document.body.style.overflow = '';
+        if (this.lightboxVideo) {
+            this.lightboxVideo.pause();
+            this.lightboxVideo.currentTime = 0;
+        }
     }
 
+    updateLightbox(index) {
+        const item = this.galleryData[index];
+        if (!item) return;
+
+        this.lightboxTitle.textContent = item.title;
+        this.lightboxDescription.textContent = item.description;
+
+        if (item.type === 'video') {
+            this.lightboxImage.style.display = 'none';
+            this.lightboxVideo.style.display = 'block';
+            this.lightboxVideoSource.src = item.src;
+            this.lightboxVideo.load();
+            this.lightboxVideo.play();
+        } else {
+            this.lightboxVideo.style.display = 'none';
+            this.lightboxVideo.pause();
+            this.lightboxImage.style.display = 'block';
+            const imgSrc = item.src || this.galleryData[index].src; // Fallback
+            if (imgSrc) this.lightboxImage.src = imgSrc;
+            this.lightboxImage.alt = item.alt;
+        }
+    }
+
+    showPrevItem() {
+        this.currentIndex = (this.currentIndex - 1 + this.galleryData.length) % this.galleryData.length;
+        this.updateLightbox(this.currentIndex);
+    }
+
+    showNextItem() {
+        this.currentIndex = (this.currentIndex + 1) % this.galleryData.length;
+        this.updateLightbox(this.currentIndex);
+    }
+    
     // Scroll Animations - Reduziert für Performance
     initScrollAnimations() {
         const animatedElements = document.querySelectorAll('.feature-item, .service-card, .about-text, .about-image');
         
-        const animationObserver = new IntersectionObserver((entries) => {
+        const animationObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-in');
-                    animationObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
@@ -353,27 +339,17 @@ class BarbershopOptimized {
 
     // Mobile Optimierungen
     initMobileOptimizations() {
-        // Touch-optimierte Buttons
         const buttons = document.querySelectorAll('a, button');
         buttons.forEach(btn => {
-            const rect = btn.getBoundingClientRect();
-            if (rect.width < 44 || rect.height < 44) {
-                btn.style.minWidth = '44px';
-                btn.style.minHeight = '44px';
-            }
+            btn.style.minWidth = '44px';
+            btn.style.minHeight = '44px';
         });
         
-        // Vereinfachte Animationen
         document.documentElement.style.setProperty('--animation-duration', '0.2s');
-        
-        // Disable parallax effects
-        const parallaxElements = document.querySelectorAll('[data-speed]');
-        parallaxElements.forEach(el => el.removeAttribute('data-speed'));
     }
 
     // Accessibility Features
     initAccessibility() {
-        // Skip link functionality
         const skipLink = document.querySelector('.skip-link');
         if (skipLink) {
             skipLink.addEventListener('click', (e) => {
@@ -387,12 +363,10 @@ class BarbershopOptimized {
             });
         }
         
-        // Ensure all images have alt text
         document.querySelectorAll('img:not([alt])').forEach(img => {
             img.alt = 'Barbershop by Hausar';
         });
         
-        // Add focus visible for keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Tab') {
                 document.body.classList.add('keyboard-nav');
@@ -407,16 +381,7 @@ class BarbershopOptimized {
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        new BarbershopOptimized();
-    });
+    document.addEventListener('DOMContentLoaded', () => new BarbershopOptimized());
 } else {
     new BarbershopOptimized();
-}
-
-// Register Service Worker for offline functionality (optional)
-if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-        // Service worker registration failed
-    });
 }
