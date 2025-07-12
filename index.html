@@ -16,20 +16,20 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="Bilder/webp/Logo1.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" as="style">
     
     <!-- Critical CSS inline für bessere Performance -->
     <style>
         :root{--primary-gold:#d4af37;--primary-dark:#1a1a1a;--primary-light:#f8f8f8}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--primary-light);color:var(--primary-dark)}
+        body{font-family:'Source Sans Pro',sans-serif;background:var(--primary-light);color:var(--primary-dark)}
         .navbar-premium{position:fixed;top:0;width:100%;background:rgba(26,26,26,0.95);z-index:1000;padding:1rem 0}
         .hero-premium{min-height:100vh;background:var(--primary-dark);display:flex;align-items:center;justify-content:center}
     </style>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Icons - defer loading -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -79,8 +79,6 @@
     </script>
 </head>
 <body>
-    <!-- Skip to content link für Accessibility -->
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
     
     <!-- HINZUGEFÜGT: Placeholder für den Header -->
     <header id="header-placeholder"></header>
@@ -99,8 +97,8 @@
                              loading="eager">
                     </div>
                     <div class="slide">
-                        <img data-src="Bilder/webp/Hausar(Besitzer).webp" 
-                             alt="Hausar - Inhaber und Meister-Barbier"
+                        <img data-src="Bilder/webp/Außenbereich.webp" 
+                             alt="Barbershop by Hausar - Einladender Eingang in der Südstraße"
                              width="1920" 
                              height="1080"
                              loading="lazy">
@@ -108,6 +106,48 @@
                     <div class="slide">
                         <img data-src="Bilder/webp/Geräte.webp" 
                              alt="Professionelle Barbershop Ausstattung"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Styling.webp" 
+                             alt="Professionelles Styling in Aktion"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Snapshot15.webp" 
+                             alt="Meisterhafte Handwerkskunst"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Snapshot11.webp" 
+                             alt="Präzise Barbier-Arbeit"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Snapshot27.webp" 
+                             alt="Detailreiche Handwerkskunst"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Snapshot24.webp" 
+                             alt="Premium Barbershop Atmosphäre"
+                             width="1920" 
+                             height="1080"
+                             loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Feuer.webp" 
+                             alt="Traditionelle Ohrenbehandlung mit Feuer"
                              width="1920" 
                              height="1080"
                              loading="lazy">
@@ -121,8 +161,8 @@
                     <img src="Bilder/webp/logo2.png" 
                          alt="Barbershop by Hausar" 
                          class="hero-logo"
-                         width="400" 
-                         height="150">
+                         width="800" 
+                         height="300">
                     <span class="title-subtitle">Premium Herrenpflege in Braunschweig</span>
                 </h1>
                 
@@ -198,7 +238,7 @@
                     </div>
                     
                     <div class="about-image">
-                        <div class="image-card">
+                        <div class="image-card main-image">
                             <img src="Bilder/webp/Hausar(Besitzer).webp" 
                                  alt="Hausar - Inhaber und Meister-Barbier des Barbershops Braunschweig"
                                  width="600" 
@@ -300,7 +340,7 @@
             </div>
         </section>
 
-        <!-- Optimized Gallery Section -->
+        <!-- Gallery Section -->
         <section id="gallery" class="section-padding bg-dark">
             <div class="container">
                 <div class="section-header">
@@ -309,20 +349,8 @@
                 </div>
                 
                 <div class="gallery-grid">
-                    <!-- Erste Reihe - sofort laden -->
-                    <div class="gallery-item" data-gallery-index="0">
-                        <img src="Bilder/webp/Vorher_Nachher.webp" 
-                             alt="Beeindruckende Haar-Transformation - Vorher Nachher Vergleich"
-                             width="400" 
-                             height="400"
-                             loading="eager">
-                        <div class="gallery-overlay">
-                            <h4>Komplette Transformation</h4>
-                            <p>Vorher & Nachher</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item vip-client" data-gallery-index="1">
+                    <!-- Erste 9 Bilder (sichtbar) -->
+                    <div class="gallery-item">
                         <img src="Bilder/webp/Michael_Schultz4.webp" 
                              alt="VIP Kunde Michael Schultz - Premium Styling"
                              width="400" 
@@ -334,60 +362,389 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-gallery-index="2">
-                        <img src="Bilder/webp/Nachher.webp" 
-                             alt="Perfekter Premium Haarschnitt"
-                             width="400" 
-                             height="400"
-                             loading="eager">
-                        <div class="gallery-overlay">
-                            <h4>Premium Ergebnis</h4>
-                            <p>Moderner Style</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Lazy loaded images -->
-                    <div class="gallery-item vip-client" data-gallery-index="3">
-                        <img data-src="Bilder/webp/Felix_Kroos.webp" 
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Felix_Kroos.webp" 
                              alt="VIP Kunde Felix Kroos - Exklusives Styling"
                              width="400" 
                              height="400"
-                             loading="lazy"
-                             class="lazy">
+                             loading="eager">
                         <div class="gallery-overlay">
                             <h4>VIP Client ⭐</h4>
                             <p>Felix Kroos</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-gallery-index="4">
-                        <img data-src="Bilder/webp/FullMakeOver.webp" 
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/HappyCustomer.webp" 
+                             alt="Zufriedener Kunde - Authentische Atmosphäre"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Zufriedene Kunden</h4>
+                            <p>Unser größter Erfolg</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Haare.webp" 
+                             alt="Professioneller Haarschnitt - Haar-Expertise"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Haar-Expertise</h4>
+                            <p>Klassische Schnitte</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Haare2.webp" 
+                             alt="Moderne Haar-Trends"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Moderne Trends</h4>
+                            <p>Zeitgemäße Styles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/FullMakeOver.webp" 
                              alt="Komplette Verwandlung - Full Makeover"
                              width="400" 
                              height="400"
-                             loading="lazy"
-                             class="lazy">
+                             loading="eager">
                         <div class="gallery-overlay">
                             <h4>Full MakeOver</h4>
                             <p>Rundum-Erneuerung</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-gallery-index="5">
-                        <img data-src="Bilder/webp/Nachher_Bart.webp" 
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Bart.webp" 
+                             alt="Professionelle Bartpflege - Bart-Meisterschaft"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Bart-Meisterschaft</h4>
+                            <p>Präzise Formgebung</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Nachher_Bart.webp" 
                              alt="Präzise Bartformung - Meisterhafte Bartpflege"
                              width="400" 
                              height="400"
-                             loading="lazy"
-                             class="lazy">
+                             loading="eager">
                         <div class="gallery-overlay">
                             <h4>Bart Perfektion</h4>
                             <p>Präzise Formgebung</p>
                         </div>
                     </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Augenbrauen.webp" 
+                             alt="Professionelle Augenbrauen-Pflege"
+                             width="400" 
+                             height="400"
+                             loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Augenbrauen-Kunst</h4>
+                            <p>Detailarbeit</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Restliche Bilder (versteckt) -->
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Niko_Kijewski.webp" 
+                             alt="VIP Kunde Niko Kijewski - Exklusives Premium Styling"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Niko Kijewski</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Patrick_Kammerbauer.webp" 
+                             alt="VIP Kunde Patrick Kammerbauer - Premium Herrenpflege"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Patrick Kammerbauer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Israel_Almeida.webp" 
+                             alt="VIP Kunde Israel Almeida - Meisterhafte Transformation"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Israel Almeida</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/HappyCustomer2.webp" 
+                             alt="Glücklicher Kunde mit neuem Look"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Strahlende Gesichter</h4>
+                            <p>Nach jedem Besuch</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher.webp" 
+                             alt="Beeindruckende Haar-Transformation - Vorher Nachher Vergleich"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Komplette Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher10.webp" 
+                             alt="Beeindruckende Transformation - Vorher Nachher"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher11.webp" 
+                             alt="Spektakuläre Veränderung - Styling Transformation"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Komplette Erneuerung</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Bart2.webp" 
+                             alt="Präzise Bart-Konturen"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Präzise Konturen</h4>
+                            <p>Bart-Spezialist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Bart3.webp" 
+                             alt="Meisterhafte Bartpflege"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Bart-Kunstwerk</h4>
+                            <p>Perfekte Linien</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Bart4.webp" 
+                             alt="Professionelle Bartformung"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Bart-Perfektion</h4>
+                            <p>Handwerkskunst</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Bart5.webp" 
+                             alt="Elegante Bartgestaltung"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Elegante Konturen</h4>
+                            <p>Stilvolle Formgebung</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Haare3.webp" 
+                             alt="Professioneller Haarschnitt"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Haar-Meisterschaft</h4>
+                            <p>Präzise Schnitte</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Haare4.webp" 
+                             alt="Moderne Frisur"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Moderne Styles</h4>
+                            <p>Zeitgemäße Looks</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Haare5.webp" 
+                             alt="Stilvolle Herrenfrisur"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Stilvolle Frisuren</h4>
+                            <p>Elegante Schnitte</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Haare6.webp" 
+                             alt="Klassische Herrenfrisur"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Klassische Eleganz</h4>
+                            <p>Zeitlose Schnitte</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher2.webp" 
+                             alt="Beeindruckende Transformation"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher3.webp" 
+                             alt="Spektakuläre Veränderung"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Spektakuläre Veränderung</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher4.webp" 
+                             alt="Beeindruckende Verwandlung"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Beeindruckende Verwandlung</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher5.webp" 
+                             alt="Professionelle Transformation"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Professionelle Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/WaitingCustomer.webp" 
+                             alt="Wartender Kunde in entspannter Atmosphäre"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Entspannte Atmosphäre</h4>
+                            <p>Wohlfühlerlebnis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/WaitingCustomer2.webp" 
+                             alt="Kunde in komfortabler Wartebereich"
+                             width="400" 
+                             height="400"
+                             loading="lazy"
+                             class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Komfortabler Service</h4>
+                            <p>Entspanntes Warten</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Video Gallery Section -->
+                <!-- Mehr anzeigen Button -->
+                <div class="gallery-load-more">
+                    <button class="btn-premium" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        Mehr anzeigen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-dark">
+            <div class="container">
                 <div class="video-gallery-section">
                     <h3 class="gallery-subtitle">Live Einblicke</h3>
                     <p class="gallery-subtext">Erleben Sie unsere Arbeit in Aktion</p>
@@ -434,27 +791,78 @@
                 
                 <!-- Snapshots Gallery -->
                 <div class="snapshots-section">
-                    <h3 class="gallery-subtitle">Handwerkskunst im Detail</h3>
-                     <p class="gallery-subtext">Hochwertige Einblicke in unsere Arbeit</p>
                     <div class="snapshots-grid">
                         <div class="snapshot-item gallery-item" data-type="image">
                             <img src="Bilder/webp/Geräte.webp" alt="Professionelle Geräte" loading="lazy" class="lazy">
                             <div class="snapshot-overlay">
-                                <h4>Premium Equipment</h4>
                             </div>
                         </div>
                         <div class="snapshot-item gallery-item" data-type="image">
                             <img src="Bilder/webp/Snapshot1.webp" alt="Detail Aufnahme" loading="lazy" class="lazy">
                             <div class="snapshot-overlay">
-                                <h4>Präzision</h4>
                             </div>
                         </div>
                         <div class="snapshot-item gallery-item" data-type="image">
                             <img src="Bilder/webp/Snapshot5.webp" alt="Handwerk Detail" loading="lazy" class="lazy">
                             <div class="snapshot-overlay">
-                                <h4>Handwerk</h4>
                             </div>
                         </div>
+                        <div class="snapshot-item gallery-item" data-type="image">
+                            <img data-src="Bilder/webp/Snapshot7.webp" alt="Meisterhafte Technik" loading="lazy" class="lazy">
+                            <div class="snapshot-overlay">
+                            </div>
+                        </div>
+                        <div class="snapshot-item gallery-item" data-type="image">
+                            <img data-src="Bilder/webp/Snapshot9.webp" alt="Professionelle Ausstattung" loading="lazy" class="lazy">
+                            <div class="snapshot-overlay">
+                            </div>
+                        </div>
+
+                        <div class="snapshot-item gallery-item" data-type="image">
+                            <img data-src="Bilder/webp/Snapshot14.webp" alt="Kunstfertigkeit" loading="lazy" class="lazy">
+                            <div class="snapshot-overlay">
+                            </div>
+                        </div>
+                                                <div class="snapshot-item gallery-item" data-type="image">
+                            <img data-src="Bilder/webp/Snapshot22.webp" alt="Premium Service" loading="lazy" class="lazy">
+                            <div class="snapshot-overlay">
+                            </div>
+                        </div>
+                        
+                        <!-- Versteckte Bilder (ab dem 7. Bild) -->
+                        <div class="snapshot-item gallery-item hidden" data-type="image">
+                             <img data-src="Bilder/webp/Snapshot26.webp" alt="Exzellenz" loading="lazy" class="lazy">
+                             <div class="snapshot-overlay">
+                             </div>
+                         </div>
+                         <div class="snapshot-item gallery-item hidden" data-type="image">
+                             <img data-src="Bilder/webp/Snapshot19.webp" alt="Handwerkskunst" loading="lazy" class="lazy">
+                             <div class="snapshot-overlay">
+                             </div>
+                         </div>
+                         <div class="snapshot-item gallery-item hidden" data-type="image">
+                             <img data-src="Bilder/webp/Snapshot17.webp" alt="Perfektion" loading="lazy" class="lazy">
+                             <div class="snapshot-overlay">
+                             </div>
+                         </div>
+                         <div class="snapshot-item gallery-item hidden" data-type="image">
+                             <img data-src="Bilder/webp/Snapshot25.webp" alt="Fachwissen" loading="lazy" class="lazy">
+                             <div class="snapshot-overlay">
+                             </div>
+                         </div>
+                         <div class="snapshot-item gallery-item hidden" data-type="image">
+                             <img data-src="Bilder/webp/Snapshot18.webp" alt="Qualität" loading="lazy" class="lazy">
+                             <div class="snapshot-overlay">
+                             </div>
+                         </div>
+                    </div>
+                    
+                    <!-- Mehr anzeigen Button für Snapshots -->
+                    <div class="gallery-load-more">
+                        <button class="btn-premium" id="snapshotsLoadMoreBtn">
+                            <i class="fas fa-plus"></i>
+                            Mehr anzeigen
+                        </button>
                     </div>
                 </div>
 
@@ -553,6 +961,8 @@
 
     <!-- Scripts -->
     <script src="js/main-simplified.js" defer></script>
+    <script src="js/gallery-simple.js" defer></script>
     
 </body>
 </html>
+

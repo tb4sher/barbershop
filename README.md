@@ -1,46 +1,24 @@
-# Barber Shop Braunschweig - Premium Website 💈
+# Barbershop BS - Premium Website 💈
 
-Eine elegante, responsive Premium-Barbershop-Website für Braunschweig.
+Eine elegante, moderne Premium-Barbershop-Website mit optimierten Kontrastverhältnissen und luxuriösen Animationen.
 
 ## 📁 Projektstruktur
 
 ```
 Code/
-├── index.html              # Haupt-Website
-├── impressum.html          # Impressum
-├── datenschutz.html        # Datenschutzerklärung  
-├── agb.html               # Allgemeine Geschäftsbedingungen
-├── 404.html               # Fehlerseite
+├── index.html              # Haupt-HTML-Datei
 ├── css/
 │   └── style.css          # Haupt-Stylesheet
 ├── js/
-│   └── main-simplified.js # JavaScript-Funktionalitäten
-├── Bilder/               # Bilder und Logos
+│   └── main.js           # JavaScript-Funktionalitäten
+├── assets/
+│   ├── images/           # Bilder-Assets
+│   └── videos/           # Video-Assets
+├── Bilder/               # Projekt-Bilder
 ├── Videos/               # Video-Dateien
-├── robots.txt            # SEO Robots
-└── sitemap.xml           # XML-Sitemap
+├── sw.js                 # Service Worker
+└── README.md            # Diese Datei
 ```
-
-## 🚀 Features
-
-- ✅ Responsive Design (Mobile, Tablet, Desktop)
-- ✅ Premium Logo-Integration (Logo1.png & logo2.png)
-- ✅ SEO-optimiert mit strukturierten Daten
-- ✅ Galerie mit Lightbox-Funktionalität
-- ✅ Video-Integration
-- ✅ Kontaktformular und Terminbuchung
-- ✅ DSGVO-konform
-
-## 📧 Kontakt
-
-**Barber Shop - Braunschweig**  
-Südstraße 24, 38100 Braunschweig  
-Tel: 01578 2935906  
-E-Mail: info@barber-shop-braunschweig.de
-
-## 🌐 Website starten
-
-Einfach die `index.html` im Browser öffnen - keine Installation erforderlich!
 
 ## 🌟 Features
 
