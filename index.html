@@ -102,7 +102,74 @@
     <div class="scroll-progress" id="scrollProgress"></div>
     
      
-     <!-- Header eingebettet -->
+    <!-- Header eingebettet -->
+    <header class="header-container">
+        <!-- Top-Bar mit Kontaktinfos -->
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="top-bar-info">
+                    <span><i class="fas fa-map-marker-alt"></i>Südstraße 24, Braunschweig</span>
+                </div>
+                <div class="top-bar-contact">
+                    <span><i class="fas fa-clock"></i> Di-Fr: 10-19 Uhr, Sa: 10-18 Uhr</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-premium" id="navbar" role="navigation">
+            <div class="nav-container">
+
+                <a href="#home" class="logo-premium" aria-label="Startseite">
+                    <img src="Bilder/logo-weiss-header-klein.png" alt="Barbershop by Hausar Logo" loading="eager">
+                </a>
+
+                <!-- HIDDEN CHECKBOX für Mobile Toggle -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü öffnen">
+
+                <!-- LABEL ALS HAMBURGER ICON -->
+                <label for="nav-toggle" class="mobile-menu-toggle" aria-label="Menü öffnen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </label>
+
+                <!-- Navigation Links -->
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">Über Uns</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                    <li><a href="#contact" class="btn-premium">Termin Buchen</a></li>
+                </ul>
+
+                <!-- Social Media Icons -->
+                <div class="nav-contact">
+                    <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="social-link" 
+                       aria-label="Facebook-Seite öffnen">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/barbershopbs" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="social-link" 
+                       aria-label="Instagram-Seite öffnen">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://g.page/barbershop-braunschweig" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="social-link" 
+                       aria-label="Google Business-Seite öffnen">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
     
     <main id="main">
         <!-- Hero Section - Minimalistisch -->
@@ -453,6 +520,59 @@
     </main>
 
     <!-- Footer eingebettet -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo" style="padding-bottom:10px;">
+                        <img src="Bilder/logo-weiss-header-klein.png" alt="Barbershop by Hausar Logo" width="220">
+                    </div>
+                    <p>Premium Barbershop für exklusive Herrenpflege in Braunschweig.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://g.page/barbershop-braunschweig" target="_blank" rel="noopener" aria-label="Google Business">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#about">Über Hausar</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Südstraße 24<br>38100 Braunschweig</p>
+                    <p style="margin-top:8px;"><i class="fas fa-phone"></i> <a href="tel:015782935906">01578 2935906</a></p>
+                    <p style="margin-top:8px;"><i class="fas fa-envelope"></i> <a href="mailto:info@barbershop-bs.com">info@barbershop-bs.com</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barbershop by Hausar. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildergalerie">
