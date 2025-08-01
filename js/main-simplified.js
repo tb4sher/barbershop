@@ -152,18 +152,45 @@ class BarbershopSimple {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
 
-    // Mobile Menu
+    // Enhanced Mobile Menu mit Schließen-Funktionalität
     initMobileMenu() {
         const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        if (navToggle) {
+        if (navToggle && navMenu) {
+            // Navigation Links schließen das Menü
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (navToggle.checked) {
                         navToggle.checked = false;
                     }
                 });
+            });
+
+            // Schließen-Button (::before) funktional machen
+            navMenu.addEventListener('click', (e) => {
+                const rect = navMenu.getBoundingClientRect();
+                const closeButtonArea = {
+                    left: rect.right - 80,
+                    top: rect.top,
+                    right: rect.right - 20,
+                    bottom: rect.top + 80
+                };
+
+                if (e.clientX >= closeButtonArea.left && 
+                    e.clientX <= closeButtonArea.right && 
+                    e.clientY >= closeButtonArea.top && 
+                    e.clientY <= closeButtonArea.bottom) {
+                    navToggle.checked = false;
+                }
+            });
+
+            // ESC-Taste schließt das Menü
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navToggle.checked) {
+                    navToggle.checked = false;
+                }
             });
         }
     }
