@@ -1,30 +1,68 @@
-<!-- /header.html -->
-<nav class="navbar navbar-premium" id="navbar" role="navigation">
-    <div class="nav-container">
-        <a href="index.html" class="logo-premium" aria-label="Barbershop by Hausar Startseite">
-            <img src="Bilder/webp/Logo1.png" 
-                 alt="Barbershop by Hausar Logo" 
-                 width="100" 
-                 height="50"
-                 loading="eager">
-        </a>
-        
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="index.html#home" class="nav-link">Home</a></li>
-            <li><a href="index.html#about" class="nav-link">Über Uns</a></li>
-            <li><a href="index.html#services" class="nav-link">Services</a></li>
-            <li><a href="index.html#gallery" class="nav-link">Galerie</a></li>
-            <li><a href="index.html#contact" class="btn-premium">Termin Buchen</a></li>
-        </ul>
-        
-        <button class="mobile-menu-toggle" 
-                id="mobile-menu" 
-                aria-label="Menü öffnen" 
-                aria-expanded="false"
-                aria-controls="nav-menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+<!-- Header Container - beide zusammen sticky -->
+<header class="header-container">
+    <!-- Top-Bar mit Kontaktinfos -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-map-marker-alt"></i>Südstraße 24, Braunschweig</span>
+            </div>
+            <div class="top-bar-contact">
+                <span><i class="fas fa-clock"></i> Di-Fr: 10-19 Uhr, Sa: 10-18 Uhr</span>
+            </div>
+        </div>
     </div>
-</nav>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-premium" id="navbar" role="navigation">
+        <div class="nav-container">
+
+            <a href="index.php" class="logo-premium" aria-label="Startseite">
+                <img src="Bilder/logo-weiss-header-klein.png" alt="Barbershop by Hausar Logo" loading="eager">
+            </a>
+
+            <!-- HIDDEN CHECKBOX für Mobile Toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü öffnen">
+
+            <!-- LABEL ALS HAMBURGER ICON -->
+            <label for="nav-toggle" class="mobile-menu-toggle" aria-label="Menü öffnen">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Über Uns</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="btn-premium">Termin Buchen</a></li>
+            </ul>
+
+            <!-- Social Media Icons -->
+            <div class="nav-contact">
+                <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="social-link" 
+                   aria-label="Facebook-Seite öffnen">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/barbershopbs" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="social-link" 
+                   aria-label="Instagram-Seite öffnen">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://g.page/barbershop-braunschweig" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="social-link" 
+                   aria-label="Google Business-Seite öffnen">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

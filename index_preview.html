@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop by Hausar Braunschweig - Premium Herrenfriseur</title>
+    <meta name="description" content="Premium Barbershop in Braunschweig ✂️ Meisterhafte Haarschnitte & Bartpflege von Hausar. 15 Jahre Erfahrung ☎️ 01578 2935906">
+    <meta name="keywords" content="Barbershop Braunschweig, Herrenfriseur, Hausar Barbier, Bartpflege, Premium Haarschnitt">
+    <meta name="author" content="Barbershop by Hausar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="Bilder/logo.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
+    
+    <!-- Critical CSS inline für bessere Performance -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#ffffff;color:#2C3E50;overflow-x:hidden}
+        .hero-premium{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F8F9FA 0%,#FFFFFF 100%)}
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="Bilder/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="Bilder/logo.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Barbershop by Hausar - Premium Herrenfriseur Braunschweig">
+    <meta property="og:description" content="Meisterhafte Herrenpflege in der Südstraße 24. Professionelle Haarschnitte und Bartpflege vom Experten.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:image" content="https://barber-shop-braunschweig.de/Bilder/webp/Interior.webp">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarberShop",
+        "name": "Barbershop by Hausar",
+        "image": ["https://barber-shop-braunschweig.de/Bilder/webp/Interior.webp"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Südstraße 24",
+            "addressLocality": "Braunschweig",
+            "postalCode": "38100",
+            "addressCountry": "DE"
+        },
+        "telephone": "+4915782935906",
+        "openingHours": ["Tu-Fr 10:00-19:00", "Sa 10:00-18:00"],
+        "priceRange": "€€"
+    }
+    </script>
+</head>
+<body>
+    
+    <!-- Header eingebettet -->
+    <!-- Top-Bar mit Kontaktinfos -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-map-marker-alt"></i>Südstraße 24, Braunschweig</span>
+            </div>
+            <div class="top-bar-contact">
+                <span><i class="fas fa-clock"></i> Di-Fr: 10-19 Uhr, Sa: 10-18 Uhr</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-premium" id="navbar" role="navigation">
+        <div class="nav-container">
+
+            <a href="#home" class="logo-premium" aria-label="Startseite">
+                <img src="Bilder/logo-weiss-header-klein.png" alt="Barbershop by Hausar Logo" loading="eager">
+            </a>
+
+            <!-- HIDDEN CHECKBOX für Mobile Toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü öffnen">
+
+            <!-- LABEL ALS HAMBURGER ICON -->
+            <label for="nav-toggle" class="mobile-menu-toggle" aria-label="Menü öffnen">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Über Uns</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="btn-premium">Termin Buchen</a></li>
+            </ul>
+
+            <!-- Instagram Icon -->
+            <div class="nav-contact">
+                <a href="https://instagram.com/barbershopbs" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="instagram-link" 
+                   aria-label="Instagram-Seite öffnen">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main id="main">
+        <!-- Hero Section - Minimalistisch -->
+        <section id="home" class="hero-premium parallax-container">
+            <div class="hero-bg">
+                <div class="snapshot-slider" data-slider="hero">
+                    <div class="slide active">
+                        <img src="Bilder/webp/Interior.webp" 
+                             alt="Barbershop by Hausar - Premium Ambiente"
+                             width="1920" height="1080" loading="eager">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Außenbereich.webp" 
+                             alt="Barbershop Eingang Südstraße"
+                             width="1920" height="1080" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img data-src="Bilder/webp/Styling.webp" 
+                             alt="Professionelles Styling"
+                             width="1920" height="1080" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <img src="Bilder/logo.png" 
+                     alt="Barbershop by Hausar Logo" 
+                     class="hero-logo"
+                     width="250">
+                
+                <span class="title-subtitle">Premium Herrenpflege in Braunschweig</span>
+                
+                <div class="hero-buttons">
+                    <a href="tel:015782935906" class="btn-premium">
+                        <i class="fas fa-phone"></i>
+                        Termin vereinbaren
+                    </a>
+                    <a href="#services" class="btn-glass">
+                        <i class="fas fa-cut"></i>
+                        Services entdecken
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Jahre Erfahrung</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Bewertung</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section - Minimalistisch -->
+        <section id="about" class="section-padding about-section">
+            <div class="about-parallax"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meisterhafte Handwerkskunst</h2>
+                    <p class="section-subtitle">Tradition trifft Innovation in der Südstraße 24</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Über 15 Jahre Expertise</h3>
+                        <p>Hausar steht für höchste Qualität in der Herrenpflege. Traditionelle Barbier-Kunst kombiniert mit modernen Techniken für das perfekte Ergebnis.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Premium Qualität</h4>
+                                    <p>Nur hochwertige Produkte und Werkzeuge</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Termingenau</h4>
+                                    <p>Pünktlich und zuverlässig</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-user-tie"></i>
+                                <div>
+                                    <h4>Persönliche Beratung</h4>
+                                    <p>Individueller Style für jeden Typ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image">
+                        <div class="main-image">
+                            <img src="Bilder/webp/Hausar(Besitzer).webp" 
+                                 alt="Hausar - Inhaber und Meister-Barbier"
+                                 width="500" height="600" loading="lazy">
+                            <div class="owner-badge">
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>Hausar</strong>
+                                    <span>Inhaber & Meister</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section - Minimalistisch -->
+        <section id="services" class="section-padding services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Unsere Services</h2>
+                    <p class="section-subtitle">Exklusive Dienstleistungen für den modernen Mann</p>
+                </div>
+                
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="Bilder/webp/Nachher.webp" 
+                                 alt="Premium Haarschnitt"
+                                 width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>Premium Haarschnitt</h3>
+                            <p>Individueller Schnitt mit persönlicher Stilberatung und Styling.</p>
+                            <ul class="service-features">
+                                <li>Ausführliche Beratung</li>
+                                <li>Präzisionsschnitt</li>
+                                <li>Styling inklusive</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="Bilder/webp/Nachher_Bart.webp" 
+                                 alt="Professionelle Bartpflege"
+                                 width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3>Bartpflege Premium</h3>
+                            <p>Professionelle Bartpflege mit traditioneller Rasur und Styling.</p>
+                            <ul class="service-features">
+                                <li>Bart-Trimming</li>
+                                <li>Konturierung</li>
+                                <li>Hot Towel Rasur</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="Bilder/webp/FullMakeOver.webp" 
+                                 alt="Komplettpaket Styling"
+                                 width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3>Komplettpaket</h3>
+                            <p>Das ultimative Grooming-Erlebnis für anspruchsvolle Herren.</p>
+                            <ul class="service-features">
+                                <li>Haarschnitt & Styling</li>
+                                <li>Bartpflege</li>
+                                <li>Gesichtspflege</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section - Minimalistisch -->
+        <section id="gallery" class="section-padding gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Unsere Arbeit</h2>
+                    <p class="section-subtitle">Qualität, die für sich spricht</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <!-- VIP Kunden -->
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Michael_Schultz4.webp" 
+                             alt="VIP Kunde Michael Schultz"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Michael Schultz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Felix_Kroos.webp" 
+                             alt="VIP Kunde Felix Kroos"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Felix Kroos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Niko_Kijewski.webp" 
+                             alt="VIP Kunde Niko Kijewski"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>VIP Client ⭐</h4>
+                            <p>Niko Kijewski</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/HappyCustomer.webp" 
+                             alt="Zufriedener Kunde"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Premium Service</h4>
+                            <p>Zufriedene Kunden</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Bart.webp" 
+                             alt="Professionelle Bartpflege"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Bart-Expertise</h4>
+                            <p>Präzise Formgebung</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Bilder/webp/Haare.webp" 
+                             alt="Professioneller Haarschnitt"
+                             width="400" height="400" loading="eager">
+                        <div class="gallery-overlay">
+                            <h4>Haar-Meisterschaft</h4>
+                            <p>Klassische Schnitte</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Versteckte Bilder -->
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Vorher_Nachher.webp" 
+                             alt="Transformation Vorher Nachher"
+                             width="400" height="400" loading="lazy" class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Transformation</h4>
+                            <p>Vorher & Nachher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Bart2.webp" 
+                             alt="Präzise Bart-Konturen"
+                             width="400" height="400" loading="lazy" class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Präzise Konturen</h4>
+                            <p>Bart-Spezialist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden">
+                        <img data-src="Bilder/webp/Haare2.webp" 
+                             alt="Moderne Haar-Trends"
+                             width="400" height="400" loading="lazy" class="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Moderne Trends</h4>
+                            <p>Zeitgemäße Styles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-load-more">
+                    <button class="btn-premium" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        Mehr anzeigen
+                    </button>
+                </div>
+                
+                <!-- Video Gallery - Reduziert -->
+                <div class="video-gallery-section">
+                    <h3 class="gallery-subtitle">Live Einblicke</h3>
+                    <p class="gallery-subtext">Erleben Sie unsere Arbeit in Aktion</p>
+                    
+                    <div class="video-grid">
+                        <div class="video-item" data-type="video">
+                            <video muted loop playsinline poster="Bilder/webp/Snapshot15.webp">
+                                <source src="Videos/FullStylingTimelapse.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                                <div class="video-info">
+                                    <h4>Styling Timelapse</h4>
+                                    <p>Komplette Transformation</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="video-item" data-type="video">
+                            <video muted loop playsinline poster="Bilder/webp/Snapshot20.webp">
+                                <source src="Videos/BartProzess.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                               <div class="play-button"><i class="fas fa-play"></i></div>
+                                <div class="video-info">
+                                    <h4>Bart Styling</h4>
+                                    <p>Präzise Formgebung</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Minimalistisch -->
+        <section id="contact" class="section-padding contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Termin vereinbaren</h2>
+                    <p class="section-subtitle">Kontaktieren Sie uns für Ihren Premium-Termin</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Besuchen Sie uns</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p><a href="https://maps.google.com/?q=Südstraße+24+38100+Braunschweig" target="_blank" rel="noopener">
+                                    Südstraße 24<br>38100 Braunschweig
+                                </a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p><a href="tel:015782935906">01578 2935906</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Öffnungszeiten</h4>
+                                <p>Di-Fr: 10:00-19:00<br>Sa: 10:00-18:00<br>Mo & So: Geschlossen</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-info-container">
+                        <h3><i class="fas fa-phone-volume"></i> Ihr Premium-Termin</h3>
+                        <p class="booking-notice">
+                            Für eine persönliche Beratung und optimale Terminplanung nehmen wir Ihre Buchung gerne telefonisch entgegen.
+                        </p>
+
+                        <div class="booking-cta">
+                            <a href="tel:015782935906" class="btn-premium">
+                                <i class="fas fa-phone"></i>
+                                Jetzt anrufen & Termin sichern
+                            </a>
+                        </div>
+
+                        <div class="booking-trust">
+                            <div class="trust-item">
+                                <i class="fas fa-star"></i>
+                                <span><strong>4.9/5 Sterne</strong> bei Google</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Über 5000</strong> zufriedene Kunden</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer eingebettet -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo" style="padding-bottom:10px;">
+                        <img src="Bilder/logo-weiss-header-klein.png" alt="Barbershop by Hausar Logo" width="220">
+                    </div>
+                    <p>Premium Barbershop für exklusive Herrenpflege in Braunschweig.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/www.barberShop.de/?locale=de_DE" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/barber_shop_bs/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://g.page/barbershop-braunschweig" target="_blank" rel="noopener" aria-label="Google Business">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#about">Über Hausar</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Südstraße 24<br>38100 Braunschweig</p>
+                    <p style="margin-top:8px;"><i class="fas fa-phone"></i> <a href="tel:015782935906">01578 2935906</a></p>
+                    <p style="margin-top:8px;"><i class="fas fa-envelope"></i> <a href="mailto:info@barbershop-bs.com">info@barbershop-bs.com</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barbershop by Hausar. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildergalerie">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Schließen">&times;</button>
+            <div class="lightbox-media">
+                <img id="lightbox-image" src="" alt="">
+                <video id="lightbox-video" controls style="display: none;">
+                    <source id="lightbox-video-source" src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+            <div class="lightbox-navigation">
+                <button id="lightbox-prev" class="lightbox-nav-btn" aria-label="Vorheriges Bild">‹</button>
+                <button id="lightbox-next" class="lightbox-nav-btn" aria-label="Nächstes Bild">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/gallery-simple.js" defer></script>
+    <script src="js/main-simplified.js" defer></script>
+</body>
+</html> 
