@@ -21,7 +21,7 @@
     --max-width: 1200px;
 }
 
-/* Reset und Basis-Styles */
+/* Reset und Basis-Styles - VERSTÄRKT gegen weiße Balken */
 * {
     margin: 0;
     padding: 0;
@@ -36,6 +36,20 @@ html {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden;
+    min-height: 100%;
+    height: 100%;
+}
+
+/* Browser-spezifische Resets - VERSTÄRKT */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    vertical-align: baseline !important;
+    background: transparent !important;
+    min-height: 100vh !important;
+    position: relative !important;
 }
 
 body {
@@ -484,7 +498,7 @@ h4 { font-size: 1.25rem; }
     }
 }
 
-/* Hero Section - Exakte Implementierung wie hagis.de - FINAL FIX */
+/* Hero Section - ABSOLUTER FIX gegen weiße Balken */
 .hero-premium {
     height: 100vh;
     height: 100dvh; /* Für moderne Browser */
@@ -495,11 +509,16 @@ h4 { font-size: 1.25rem; }
     overflow: hidden;
     background: #000;
     margin: 0 !important;
-    padding: 0 !important; /* Absolut kein Padding! */
+    padding: 0 !important;
     top: 0 !important;
     left: 0 !important;
+    right: 0 !important;
     z-index: 1;
     box-sizing: border-box;
+    /* KRITISCHER FIX: Hero Section beginnt absolut am oberen Rand */
+    margin-top: 0 !important;
+    border-top: none !important;
+    transform: translateY(0) !important;
 }
 
 /* Header-Container - positioniert sich über Hero - FINAL */
@@ -687,13 +706,6 @@ h4 { font-size: 1.25rem; }
     transform: translateY(-2px) translateZ(10px);
 }
 
-/* Entferne alle Stats-bezogenen Styles */
-.stat,
-.hero-stats,
-.stat-number,
-.stat-label {
-    display: none !important;
-}
 
 
 
@@ -1868,41 +1880,6 @@ img.loaded {
     background: var(--accent-gold);
 }
 
-/* Easter Egg: Konami Code Effect */
-.konami-active {
-    animation: rainbowBackground 3s ease-in-out;
-}
-
-@keyframes rainbowBackground {
-    0% { filter: hue-rotate(0deg); }
-    25% { filter: hue-rotate(90deg); }
-    50% { filter: hue-rotate(180deg); }
-    75% { filter: hue-rotate(270deg); }
-    100% { filter: hue-rotate(360deg); }
-}
-
-/* Notification Animations */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOutRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
 
 /* Print Optimizations */
 @media print {
@@ -1930,34 +1907,15 @@ img.loaded {
     }
 }
 
-/* Performance Optimierungen - Erweitert */
+/* Performance Optimierungen */
 * {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-/* Resource Hints für bessere Performance */
-img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-/* Verbesserte Font Loading */
-@font-display-swap {
-    font-display: swap;
-}
-
-/* Lazy Loading Optimierungen */
-img[loading="lazy"] {
-    content-visibility: auto;
-    contain-intrinsic-size: 400px 300px;
-}
-
 /* Accessibility Verbesserungen */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -1968,19 +1926,6 @@ img[loading="lazy"] {
 
 
 
-
-/* Focus Management für bessere Accessibility */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
 
 /* Skip Links */
 .skip-link {
@@ -1998,84 +1943,6 @@ img[loading="lazy"] {
 
 .skip-link:focus {
     top: 6px;
-}
-
-/* Performance Critical CSS */
-.hero-premium img {
-    will-change: transform;
-    transform: translateZ(0);
-}
-
-/* Critical Path Optimization */
-.above-fold {
-    contain: layout style paint;
-}
-
-/* WebP Support Detection */
-.webp .webp-image {
-    background-image: url('image.webp');
-}
-
-.no-webp .webp-image {
-    background-image: url('image.jpg');
-}
-
-/* Improved Text Rendering */
-body {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Performance Monitoring Support */
-.performance-marker {
-    display: none;
-}
-
-/* SEO-optimierte Überschriften-Hierarchie */
-h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-}
-
-h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.2;
-}
-
-h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    line-height: 1.3;
-}
-
-/* Strukturierte Daten Unterstützung */
-[itemscope] {
-    display: block;
-}
-
-/* Microdata Support */
-.h-card {
-    border: 1px solid var(--medium-gray);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-}
-
-/* Rich Snippets Optimierung */
-.review-snippet {
-    display: none;
-}
-
-/* Local Business Schema Support */
-.business-hours {
-    font-variant-numeric: tabular-nums;
-}
-
-/* Performance Critical Animations */
-@media (min-width: 768px) {
-    .parallax-optimized {
-        transform: translate3d(0, 0, 0);
-        will-change: transform;
-    }
 }
 
 /* Print Optimizations */
