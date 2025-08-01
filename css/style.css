@@ -776,7 +776,7 @@ body {
 /* Section Headers */
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -784,8 +784,23 @@ body {
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: var(--text-primary);
+    position: relative;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-gold), var(--accent-gold));
+    border-radius: 2px;
 }
 
 .section-subtitle {
@@ -1257,17 +1272,18 @@ body {
     text-align: center;
     color: var(--text-primary);
     font-size: 1.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     position: relative;
+    padding-bottom: 0.75rem;
 }
 
 .gallery-subtitle::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 60px;
     height: 3px;
     background: var(--primary-gold);
     border-radius: 2px;
