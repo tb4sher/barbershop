@@ -19,6 +19,7 @@ class BarbershopSimple {
         this.initMobileMenu();
         this.initLightbox();
         this.initSlider();
+        this.initVideoGallery();
         
         console.log('✅ Website erfolgreich geladen!');
     }
@@ -278,6 +279,59 @@ class BarbershopSimple {
                 if (e.key === 'ArrowLeft') showPrev();
                 if (e.key === 'ArrowRight') showNext();
             }
+        });
+    }
+
+    // Video Gallery Funktionalität
+    initVideoGallery() {
+        const videoItems = document.querySelectorAll('.video-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxVideoSource = document.getElementById('lightbox-video-source');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDescription = document.getElementById('lightbox-description');
+
+        if (!lightbox || !lightboxVideo) return;
+
+        videoItems.forEach(item => {
+            const video = item.querySelector('video');
+            const source = video.querySelector('source');
+            const videoInfo = item.querySelector('.video-info');
+            const title = videoInfo?.querySelector('h4')?.textContent || 'Video';
+            const description = videoInfo?.querySelector('p')?.textContent || '';
+
+            item.addEventListener('click', () => {
+                // Video in Lightbox anzeigen
+                lightboxImage.style.display = 'none';
+                lightboxVideo.style.display = 'block';
+                
+                if (lightboxVideoSource && source) {
+                    lightboxVideoSource.src = source.src;
+                    lightboxVideo.load();
+                }
+                
+                if (lightboxTitle) lightboxTitle.textContent = title;
+                if (lightboxDescription) lightboxDescription.textContent = description;
+                
+                lightbox.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                
+                // Video automatisch abspielen
+                setTimeout(() => {
+                    lightboxVideo.play().catch(e => console.log('Video autoplay blocked:', e));
+                }, 100);
+            });
+
+            // Video hover Effekte
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(e => console.log('Video preview play blocked:', e));
+            });
+
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
         });
     }
 }
