@@ -439,6 +439,7 @@ h4 { font-size: 1.25rem; }
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ===== MOBILE NAVIGATION (max-width: 768px) ===== */
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
@@ -448,38 +449,71 @@ h4 { font-size: 1.25rem; }
         padding: 4rem 0;
     }
     
-    /* Mobile Navigation - Minimalistisch nur Logo und Burger */
+    /* 1. Top-Bar komplett ausblenden */
     .top-bar {
         display: none !important;
     }
     
+    /* 2. Header-Container Mobile - bessere Proportionen */
     .header-container {
         background: transparent !important;
-        padding: 1rem 0 !important;
+        padding: 0.8rem 0 !important;
+        position: fixed !important;
     }
     
     .header-container.scrolled {
-        background: rgba(0, 0, 0, 0.9) !important;
+        background: rgba(0, 0, 0, 0.95) !important;
         backdrop-filter: blur(15px) !important;
         -webkit-backdrop-filter: blur(15px) !important;
     }
     
+    /* 3. Nav-Container: Optimierte Positionierung */
     .nav-container {
-        justify-content: space-between !important;
+        display: flex !important;
+        justify-content: flex-start !important;
         align-items: center !important;
+        padding: 0 1.5rem !important;
+        position: relative !important;
+    }
+    
+    /* 4. Logo Mobile - kleinere Größe und bessere Positionierung */
+    .logo-premium {
+        flex-shrink: 0 !important;
+        margin-right: auto !important;
+    }
+    
+    .logo-premium img {
+        max-width: 85px !important;
+        height: auto !important;
+        transition: all 0.3s ease !important;
     }
     
     .header-container .logo-premium img,
     .header-container.scrolled .logo-premium img {
-        content: url('Bilder/logo-weiss-header-klein.png') !important;
-        max-width: 120px !important;
+        content: url('../Bilder/logo-weiss-header-klein.png') !important;
     }
     
+    /* 5. Burger-Button ganz rechts - absolute Positionierung */
     .mobile-menu-toggle {
-        display: flex;
+        display: flex !important;
+        position: absolute !important;
+        right: 1.5rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+    
+    /* 6. Desktop Nav-Contact Icons komplett ausblenden */
+    .nav-contact {
+        display: none !important;
     }
 
-    /* Schwarzes Full-Screen Burger-Menü */
+    /* 7. Full-Screen Burger-Menü mit korrigierten Größen */
     .nav-menu {
         position: fixed;
         top: 0;
@@ -491,7 +525,7 @@ h4 { font-size: 1.25rem; }
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 2rem 1rem;
+        padding: 4rem 1rem 2rem 1rem;
         gap: 0;
         transform: translateY(-100%);
         opacity: 0;
@@ -507,18 +541,18 @@ h4 { font-size: 1.25rem; }
         visibility: visible;
     }
 
-    /* Schließen-Button */
+    /* 8. Schließen-Button oben rechts */
     .nav-menu::before {
         content: '✕';
         position: absolute;
-        top: 2rem;
-        right: 2rem;
-        font-size: 2rem;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.8rem;
         color: white;
         cursor: pointer;
         z-index: 2001;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -532,95 +566,87 @@ h4 { font-size: 1.25rem; }
         transform: rotate(90deg);
     }
 
-    /* Mobile Menu Content Layout */
+    /* 9. Navigation Links - besser proportioniert */
     .nav-menu > li {
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
     }
 
     .nav-link {
-        font-size: 1.5rem;
-        padding: 1.5rem 2rem;
+        font-size: 1.3rem !important;
+        padding: 1.2rem 2rem !important;
         color: white !important;
         text-shadow: none !important;
-        display: block;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
     }
 
     .nav-link:hover {
-        background: rgba(218, 165, 32, 0.2);
+        background: rgba(218, 165, 32, 0.2) !important;
         color: var(--primary-gold) !important;
     }
 
-    /* Mobile Menu Footer mit Kontaktdaten und Social Icons */
-    .nav-menu::after {
-        content: '';
-        margin-top: auto;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        width: 100%;
-    }
-
-    /* Social Icons im Burger-Menü anzeigen */
-    .nav-contact {
-        display: flex !important;
-        gap: 2rem;
-        margin-top: 2rem;
-        justify-content: center;
-    }
-
-    .nav-contact .social-link {
-        font-size: 2rem !important;
-        color: white !important;
-        transition: all 0.3s ease;
-    }
-
-    .nav-contact .social-link:hover {
-        color: var(--primary-gold) !important;
-        transform: scale(1.2);
-    }
-
-    /* Mobile Kontaktdaten im Burger-Menü */
+    /* 10. Mobile Kontaktdaten */
     .mobile-contact-info {
         width: 100% !important;
         margin-top: 2rem !important;
-        padding: 2rem 1rem !important;
+        padding: 1.5rem 1rem !important;
         border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
         border-bottom: none !important;
     }
 
     .mobile-info-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1rem;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.8rem !important;
+        margin-bottom: 1.2rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 0.95rem !important;
     }
 
     .mobile-info-item:last-child {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .mobile-info-item i {
-        color: var(--primary-gold);
-        font-size: 1.2rem;
-        width: 20px;
-        text-align: center;
+        color: var(--primary-gold) !important;
+        font-size: 1.1rem !important;
+        width: 18px !important;
+        text-align: center !important;
     }
 
     .mobile-info-item a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s ease;
+        color: white !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
     }
 
     .mobile-info-item a:hover {
-        color: var(--primary-gold);
+        color: var(--primary-gold) !important;
+    }
+
+    /* 11. Social Icons im Burger-Menü - nur hier anzeigen */
+    .nav-menu .nav-contact {
+        display: flex !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
+        justify-content: center !important;
+    }
+
+    .nav-menu .nav-contact .social-link {
+        font-size: 1.8rem !important;
+        color: white !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .nav-menu .nav-contact .social-link:hover {
+        color: var(--primary-gold) !important;
+        transform: scale(1.15) !important;
     }
 }
 
