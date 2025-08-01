@@ -75,19 +75,29 @@ class BarbershopSimple {
         // Optimierte Navbar Scroll-Effekte mit smootherem Übergang
         if (headerContainer && heroSection) {
             let ticking = false;
+            const logoImg = headerContainer.querySelector('.logo-premium img');
+            const isMobile = window.innerWidth <= 768;
             
             window.addEventListener('scroll', () => {
                 if (!ticking) {
                     window.requestAnimationFrame(() => {
                         const scrollY = window.scrollY;
                         const heroHeight = heroSection.offsetHeight;
-                        // Sanfterer Übergang: bereits bei 80% der Hero-Höhe beginnt der Wechsel
-                        const switchPoint = heroHeight * 0.8;
+                        // Später Übergang: erst bei 95% der Hero-Höhe beginnt der Wechsel
+                        const switchPoint = heroHeight * 0.95;
                         
                         if (scrollY > switchPoint) {
                             headerContainer.classList.add('scrolled');
+                            // Logo-Swap nur auf Desktop
+                            if (!isMobile && logoImg) {
+                                logoImg.src = 'Bilder/logo-weiss-header-klein.png';
+                            }
                         } else {
                             headerContainer.classList.remove('scrolled');
+                            // Logo-Swap nur auf Desktop
+                            if (!isMobile && logoImg) {
+                                logoImg.src = 'Bilder/logo-header-klein.png';
+                            }
                         }
                         
                         ticking = false;
@@ -158,25 +168,55 @@ class BarbershopSimple {
         }
     }
 
-    // Lightbox für Gallery
+    // Erweiterte Lightbox für Gallery mit Navigation
     initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDescription = document.getElementById('lightbox-description');
         const lightboxClose = document.querySelector('.lightbox-close');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const galleryItems = document.querySelectorAll('.gallery-item');
 
         if (!lightbox || !lightboxImage || !lightboxClose) return;
 
-        // Gallery Items klickbar machen
-        galleryItems.forEach(img => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                lightboxImage.src = img.src;
-                lightboxImage.alt = img.alt;
-                lightbox.classList.add('show');
-                document.body.style.overflow = 'hidden';
+        this.galleryData = [];
+        this.currentIndex = 0;
+
+        // Gallery Items sammeln
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            const overlay = item.querySelector('.gallery-overlay');
+            const title = overlay?.querySelector('h4')?.textContent || 'Bild';
+            const description = overlay?.querySelector('p')?.textContent || '';
+
+            this.galleryData.push({
+                src: img.src,
+                alt: img.alt,
+                title: title,
+                description: description
+            });
+
+            // Click-Handler
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => {
+                this.currentIndex = index;
+                this.openLightbox();
             });
         });
+
+        // Lightbox öffnen
+        this.openLightbox = () => {
+            const data = this.galleryData[this.currentIndex];
+            lightboxImage.src = data.src;
+            lightboxImage.alt = data.alt;
+            if (lightboxTitle) lightboxTitle.textContent = data.title;
+            if (lightboxDescription) lightboxDescription.textContent = data.description;
+            
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        };
 
         // Lightbox schließen
         const closeLightbox = () => {
@@ -184,15 +224,32 @@ class BarbershopSimple {
             document.body.style.overflow = '';
         };
 
+        // Navigation
+        const showPrev = () => {
+            this.currentIndex = (this.currentIndex - 1 + this.galleryData.length) % this.galleryData.length;
+            this.openLightbox();
+        };
+
+        const showNext = () => {
+            this.currentIndex = (this.currentIndex + 1) % this.galleryData.length;
+            this.openLightbox();
+        };
+
+        // Event Listeners
         lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
         });
+        
+        if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
+        if (lightboxNext) lightboxNext.addEventListener('click', showNext);
 
-        // ESC-Taste zum Schließen
+        // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('show')) {
-                closeLightbox();
+            if (lightbox.classList.contains('show')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
             }
         });
     }
