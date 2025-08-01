@@ -338,7 +338,7 @@ h4 { font-size: 1.25rem; }
     font-weight: 500;
     font-size: 15px;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     opacity: 0.9;
 }
@@ -521,17 +521,19 @@ h4 { font-size: 1.25rem; }
     transform: translateY(0) !important;
 }
 
-/* Header-Container - positioniert sich über Hero - FINAL */
+/* Header-Container - Sticky Navigation mit verbessertem Scroll-Verhalten */
 .header-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     background: transparent;
-    transition: all 0.3s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin: 0 !important;
     padding: 0 !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     /* Header schwebt über Hero Section ohne Layout-Verschiebung */
 }
 
@@ -2010,8 +2012,10 @@ img[src*="external"] {
 
 /* ---------- Header States ---------- */
 .header-container.scrolled {
-    background: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 /* Logo Swap per Klasse */
@@ -2021,9 +2025,10 @@ img[src*="external"] {
 
 /* Nav-Links Farbe bei Scroll */
 .header-container.scrolled .nav-link,
-.header-container.scrolled .instagram-link {
+.header-container.scrolled .social-link {
     color: var(--text-primary);
     text-shadow: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-container.scrolled .nav-link::after {

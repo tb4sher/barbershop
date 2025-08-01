@@ -72,16 +72,27 @@ class BarbershopSimple {
             });
         });
 
-        // Navbar Scroll-Effekte
+        // Optimierte Navbar Scroll-Effekte mit smootherem Übergang
         if (headerContainer && heroSection) {
+            let ticking = false;
+            
             window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                const heroHeight = heroSection.offsetHeight;
-                
-                if (scrollY > heroHeight - 100) {
-                    headerContainer.classList.add('scrolled');
-                } else {
-                    headerContainer.classList.remove('scrolled');
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const scrollY = window.scrollY;
+                        const heroHeight = heroSection.offsetHeight;
+                        // Sanfterer Übergang: bereits bei 80% der Hero-Höhe beginnt der Wechsel
+                        const switchPoint = heroHeight * 0.8;
+                        
+                        if (scrollY > switchPoint) {
+                            headerContainer.classList.add('scrolled');
+                        } else {
+                            headerContainer.classList.remove('scrolled');
+                        }
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             }, { passive: true });
         }
